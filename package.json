@@ -1,0 +1,17 @@
+{
+  "name": "a11y-examples",
+  "version": "1.0.0",
+  "description": "Web Accessibility Markup Examples",
+  "main": "index.js",
+  "author": "Nicholas Hoyt",
+  "license": "Apache-2.0",
+
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-nunjucks-render": "^1.1.0"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

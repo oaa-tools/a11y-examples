@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% import "form-macros.html" as macros %}
+{% set title = "Accessible Name: Form Controls" %}
+
+{% block content %}
+    <h2 id="test1">Labeling Techniques: <code>input[type="text"]</code></h2>
+
+    <table aria-labelledby="test1">
+      <thead>
+        <tr>
+          <th style="width: 30%">Features</th>
+          <th style="width: 20%">Test</th>
+          <th style="width: 20%">Expected Results</th>
+          <th style="width: 30%">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              <li>labeling by reference</li>
+              <li>markup: <code>label[for]</code> element</li>
+            </ul>
+          </td>
+          <td class="test-box">
+            {{ macros.inputTextRef("text-ref", "Phone:") }}
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: Phone:</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextRef("text-ref", "Phone:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <ul>
+              <li>labeling by encapsulation</li>
+              <li>markup: <code>label</code> element</li>
+            </ul>
+          </td>
+          <td class="test-box">
+            {{ macros.inputTextEnc("Phone:") }}
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: Phone:</li>
+              <li>FROM: label container</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextEnc("Phone:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <ul>
+              <li>labeling using aria-labelledby</li>
+              <li>markup: <code>aria-labelledby</code> attribute</li>
+            </ul>
+          </td>
+          <td class="test-box">
+            {{ macros.inputTextAlb("text-alb", "Phone:") }}
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: Phone:</li>
+              <li>FROM: aria-labelledby</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextAlb("text-alb", "Phone:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <ul>
+              <li>labeling using aria-label</li>
+              <li>markup: <code>aria-label</code> attribute</li>
+            </ul>
+          </td>
+          <td class="test-box">
+            {{ macros.inputTextArl("Phone:", "Phone number") }}
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: Phone number</li>
+              <li>FROM: aria-label</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextArl("Phone:", "Phone number") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <ul>
+              <li>labeling using placeholder attribute</li>
+              <li>markup: <code>placeholder</code> attribute</li>
+            </ul>
+          </td>
+          <td class="test-box">
+            {{ macros.inputTextPlh("Phone:", "xxx-xxx-xxxx") }}
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: xxx-xxx-xxxx</li>
+              <li>FROM: placeholder</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextPlh("Phone:", "xxx-xxx-xxxx") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <ul>
+              <li>labeling by reference and using placeholder attribute</li>
+              <li>markup: <code>label</code> element, <code>placeholder</code> attribute</li>
+            </ul>
+          </td>
+          <td class="test-box">
+            {{ macros.inputTextRpl("text-rpl", "Phone:", "xxx-xxx-xxxx") }}
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: Phone:</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextRpl("text-rpl", "Phone:", "xxx-xxx-xxxx") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <ul>
+              <li>labeling using title attribute</li>
+              <li>markup: <code>title</code> attribute</li>
+            </ul>
+          </td>
+          <td class="test-box">
+            {{ macros.inputTextTtl("Phone:", "Phone number") }}
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: Phone number</li>
+              <li>FROM: title</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextTtl("Phone:", "Phone number") | escape }}</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+{% endblock %}
