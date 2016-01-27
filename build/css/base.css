@@ -67,7 +67,7 @@ code.element {
   margin-bottom: 1.25em;
 }
 
-.above {
+label.above, label > div {
   display: block;
   margin-bottom: 0.5em;
 }
