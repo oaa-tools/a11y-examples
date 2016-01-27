@@ -4,7 +4,7 @@
 
 {% block content %}
     <h2 id="group-1">Using the <code>label</code> element</h2>
-    <h3>Form controls: <code>input type="text|file|password|checkbox|radio", textarea, select</code></h3>
+    <h3>Form controls: <code>input type="text|file|password|number|range|checkbox|radio", textarea, select</code></h3>
 
     <table aria-labelledby="group-1">
       <thead>
@@ -96,14 +96,66 @@
 
         <tr>
           <td class="test-box">
+            <code class="element">input[type="number"]</code>
+            {{ macros.inputNumberRef("c04", "Commits:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Commits:", "label reference", "spinbutton") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputNumberRef("c04", "Commits:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="number"]</code>
+            {{ macros.inputNumberEnc("Commits:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Commits:", "label encapsulation", "spinbutton") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputNumberEnc("Commits:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="range"]</code>
+            {{ macros.inputRangeRef("c05", "Saturation:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Saturation:", "label reference", "slider") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputRangeRef("c05", "Saturation:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="range"]</code>
+            {{ macros.inputRangeEnc("Saturation:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Saturation:", "label encapsulation", "slider") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputRangeEnc("Saturation:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
             <code class="element">input[type="checkbox"]</code>
-            {{ macros.inputCheckboxRef("c04", "Include library") }}
+            {{ macros.inputCheckboxRef("c06", "Include library") }}
           </td>
           <td>
             {{ macros.infoList("Include library", "label reference", "checkbox") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputCheckboxRef("c04", "Include library") | escape }}</pre>
+            <pre class="src">{{ macros.inputCheckboxRef("c06", "Include library") | escape }}</pre>
           </td>
         </tr>
 
@@ -123,13 +175,13 @@
         <tr>
           <td class="test-box">
             <code class="element">input[type="radio"]</code>
-            {{ macros.inputRadioRef("c05", "Four-wheel drive") }}
+            {{ macros.inputRadioRef("c07", "Four-wheel drive") }}
           </td>
           <td>
             {{ macros.infoList("Four-wheel drive", "label reference", "radio") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputRadioRef("c05", "Four-wheel drive") | escape }}</pre>
+            <pre class="src">{{ macros.inputRadioRef("c07", "Four-wheel drive") | escape }}</pre>
           </td>
         </tr>
 
@@ -149,13 +201,13 @@
         <tr>
           <td class="test-box">
             <code class="element">textarea</code>
-            {{ macros.textareaRef("c06", "Comment:") }}
+            {{ macros.textareaRef("c08", "Comment:") }}
           </td>
           <td>
             {{ macros.infoList("Comment:", "label reference", "textbox") }}
           </td>
           <td>
-            <pre class="src">{{ macros.textareaRef("c06", "Comment:") | escape }}</pre>
+            <pre class="src">{{ macros.textareaRef("c08", "Comment:") | escape }}</pre>
           </td>
         </tr>
 
@@ -175,13 +227,13 @@
         <tr>
           <td class="test-box">
             <code class="element">select</code>
-            {{ macros.selectRef("c07", "Weather condition:") }}
+            {{ macros.selectRef("c09", "Weather condition:") }}
           </td>
           <td>
             {{ macros.infoList("Weather condition:", "label reference", "listbox") }}
           </td>
           <td>
-            <pre class="src">{{ macros.selectRef("c07", "Weather condition:") | escape }}</pre>
+            <pre class="src">{{ macros.selectRef("c09", "Weather condition:") | escape }}</pre>
           </td>
         </tr>
 

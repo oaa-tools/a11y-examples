@@ -13,7 +13,7 @@
   <main>
     
     <h2 id="group-1">Using the <code>label</code> element</h2>
-    <h3>Form controls: <code>input type="text|file|password|checkbox|radio", textarea, select</code></h3>
+    <h3>Form controls: <code>input type="text|file|password|number|range|checkbox|radio", textarea, select</code></h3>
 
     <table aria-labelledby="group-1">
       <thead>
@@ -124,9 +124,7 @@
             
 <div>
   <label>
-    <div class="above">
-      File to upload:
-    </div>
+    <div>File to upload:</div>
     <input type="file">
   </label>
 </div>
@@ -145,9 +143,7 @@
             <pre class="src">
 &lt;div&gt;
   &lt;label&gt;
-    &lt;div class=&quot;above&quot;&gt;
-      File to upload:
-    &lt;/div&gt;
+    &lt;div&gt;File to upload:&lt;/div&gt;
     &lt;input type=&quot;file&quot;&gt;
   &lt;/label&gt;
 &lt;/div&gt;
@@ -217,11 +213,137 @@
 
         <tr>
           <td class="test-box">
+            <code class="element">input[type="number"]</code>
+            
+<div>
+  <label for="c04">Commits:</label>
+  <input type="number" id="c04">
+</div>
+
+          </td>
+          <td>
+            
+            <ul>
+              <li>ACC NAME: &quot;Commits:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: spinbutton</li>
+            </ul>
+
+          </td>
+          <td>
+            <pre class="src">
+&lt;div&gt;
+  &lt;label for=&quot;c04&quot;&gt;Commits:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;c04&quot;&gt;
+&lt;/div&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="number"]</code>
+            
+<div>
+  <label>Commits:
+    <input type="number">
+  </label>
+</div>
+
+          </td>
+          <td>
+            
+            <ul>
+              <li>ACC NAME: &quot;Commits:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: spinbutton</li>
+            </ul>
+
+          </td>
+          <td>
+            <pre class="src">
+&lt;div&gt;
+  &lt;label&gt;Commits:
+    &lt;input type=&quot;number&quot;&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="range"]</code>
+            
+<div>
+  <label for="c05" class="above">
+    Saturation:
+  </label>
+  <input type="range" id="c05">
+</div>
+
+          </td>
+          <td>
+            
+            <ul>
+              <li>ACC NAME: &quot;Saturation:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: slider</li>
+            </ul>
+
+          </td>
+          <td>
+            <pre class="src">
+&lt;div&gt;
+  &lt;label for=&quot;c05&quot; class=&quot;above&quot;&gt;
+    Saturation:
+  &lt;/label&gt;
+  &lt;input type=&quot;range&quot; id=&quot;c05&quot;&gt;
+&lt;/div&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="range"]</code>
+            
+<div>
+  <label>
+    <div>Saturation:</div>
+    <input type="range">
+  </label>
+</div>
+
+          </td>
+          <td>
+            
+            <ul>
+              <li>ACC NAME: &quot;Saturation:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: slider</li>
+            </ul>
+
+          </td>
+          <td>
+            <pre class="src">
+&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;Saturation:&lt;/div&gt;
+    &lt;input type=&quot;range&quot;&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
             <code class="element">input[type="checkbox"]</code>
             
 <div>
-  <input type="checkbox" id="c04">
-  <label for="c04">
+  <input type="checkbox" id="c06">
+  <label for="c06">
     Include library
   </label>
 </div>
@@ -239,8 +361,8 @@
           <td>
             <pre class="src">
 &lt;div&gt;
-  &lt;input type=&quot;checkbox&quot; id=&quot;c04&quot;&gt;
-  &lt;label for=&quot;c04&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;c06&quot;&gt;
+  &lt;label for=&quot;c06&quot;&gt;
     Include library
   &lt;/label&gt;
 &lt;/div&gt;
@@ -286,8 +408,8 @@
             <code class="element">input[type="radio"]</code>
             
 <div>
-  <input type="radio" id="c05">
-  <label for="c05">
+  <input type="radio" id="c07">
+  <label for="c07">
     Four-wheel drive
   </label>
 </div>
@@ -305,8 +427,8 @@
           <td>
             <pre class="src">
 &lt;div&gt;
-  &lt;input type=&quot;radio&quot; id=&quot;c05&quot;&gt;
-  &lt;label for=&quot;c05&quot;&gt;
+  &lt;input type=&quot;radio&quot; id=&quot;c07&quot;&gt;
+  &lt;label for=&quot;c07&quot;&gt;
     Four-wheel drive
   &lt;/label&gt;
 &lt;/div&gt;
@@ -352,10 +474,10 @@
             <code class="element">textarea</code>
             
 <div>
-  <label for="c06" class="above">
+  <label for="c08" class="above">
     Comment:
   </label>
-  <textarea id="c06"></textarea>
+  <textarea id="c08"></textarea>
 </div>
 
           </td>
@@ -371,10 +493,10 @@
           <td>
             <pre class="src">
 &lt;div&gt;
-  &lt;label for=&quot;c06&quot; class=&quot;above&quot;&gt;
+  &lt;label for=&quot;c08&quot; class=&quot;above&quot;&gt;
     Comment:
   &lt;/label&gt;
-  &lt;textarea id=&quot;c06&quot;&gt;&lt;/textarea&gt;
+  &lt;textarea id=&quot;c08&quot;&gt;&lt;/textarea&gt;
 &lt;/div&gt;
 </pre>
           </td>
@@ -386,9 +508,7 @@
             
 <div>
   <label>
-    <div class="above">
-      Comment:
-    </div>
+    <div>Comment:</div>
     <textarea></textarea>
   </label>
 </div>
@@ -407,9 +527,7 @@
             <pre class="src">
 &lt;div&gt;
   &lt;label&gt;
-    &lt;div class=&quot;above&quot;&gt;
-      Comment:
-    &lt;/div&gt;
+    &lt;div&gt;Comment:&lt;/div&gt;
     &lt;textarea&gt;&lt;/textarea&gt;
   &lt;/label&gt;
 &lt;/div&gt;
@@ -422,10 +540,10 @@
             <code class="element">select</code>
             
 <div>
-  <label for="c07" class="above">
+  <label for="c09" class="above">
     Weather condition:
   </label>
-  <select id="c07">
+  <select id="c09">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
     <option value="opt-3">Rain</option>
@@ -446,10 +564,10 @@
           <td>
             <pre class="src">
 &lt;div&gt;
-  &lt;label for=&quot;c07&quot; class=&quot;above&quot;&gt;
+  &lt;label for=&quot;c09&quot; class=&quot;above&quot;&gt;
     Weather condition:
   &lt;/label&gt;
-  &lt;select id=&quot;c07&quot;&gt;
+  &lt;select id=&quot;c09&quot;&gt;
     &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
     &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
     &lt;option value=&quot;opt-3&quot;&gt;Rain&lt;/option&gt;
@@ -466,9 +584,7 @@
             
 <div>
   <label>
-    <div class="above">
-      Weather condition:
-    </div>
+    <div>Weather condition:</div>
     <select>
       <option value="opt-1">Sunny</option>
       <option value="opt-2">Cloudy</option>
@@ -492,9 +608,7 @@
             <pre class="src">
 &lt;div&gt;
   &lt;label&gt;
-    &lt;div class=&quot;above&quot;&gt;
-      Weather condition:
-    &lt;/div&gt;
+    &lt;div&gt;Weather condition:&lt;/div&gt;
     &lt;select&gt;
       &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
       &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;

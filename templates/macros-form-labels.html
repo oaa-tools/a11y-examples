@@ -39,9 +39,7 @@
 {% macro inputFileEnc(accname) %}
 <div>
   <label>
-    <div class="above">
-      {{ accname }}
-    </div>
+    <div>{{ accname }}</div>
     <input type="file">
   </label>
 </div>
@@ -58,6 +56,39 @@
 <div>
   <label>{{ accname }}
     <input type="password">
+  </label>
+</div>
+{% endmacro %}
+
+{% macro inputNumberRef(id, accname) %}
+<div>
+  <label for="{{ id }}">{{ accname }}</label>
+  <input type="number" id="{{ id }}">
+</div>
+{% endmacro %}
+
+{% macro inputNumberEnc(accname) %}
+<div>
+  <label>{{ accname }}
+    <input type="number">
+  </label>
+</div>
+{% endmacro %}
+
+{% macro inputRangeRef(id, accname) %}
+<div>
+  <label for="{{ id }}" class="above">
+    {{ accname }}
+  </label>
+  <input type="range" id="{{ id }}">
+</div>
+{% endmacro %}
+
+{% macro inputRangeEnc(accname) %}
+<div>
+  <label>
+    <div>{{ accname }}</div>
+    <input type="range">
   </label>
 </div>
 {% endmacro %}
@@ -114,9 +145,7 @@
 {% macro textareaEnc(accname) %}
 <div>
   <label>
-    <div class="above">
-      {{ accname }}
-    </div>
+    <div>{{ accname }}</div>
     <textarea></textarea>
   </label>
 </div>
@@ -141,9 +170,7 @@
 {% macro selectEnc(accname) %}
 <div>
   <label>
-    <div class="above">
-      {{ accname }}
-    </div>
+    <div>{{ accname }}</div>
     <select>
       <option value="opt-1">Sunny</option>
       <option value="opt-2">Cloudy</option>
