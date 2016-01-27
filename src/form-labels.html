@@ -1,0 +1,317 @@
+{% extends "base.html" %}
+{% import "macros-form-labels.html" as macros %}
+{% set title = "Labeling Techniques for Form Controls: Native Semantics" %}
+
+{% block content %}
+    <h2 id="group-1">Using the <code>label</code> element</h2>
+    <h3>Form controls: <code>input type="text|file|password|checkbox|radio", textarea, select</code></h3>
+
+    <table aria-labelledby="group-1">
+      <thead>
+        <tr>
+          <th style="width: 30%">Element/Test</th>
+          <th style="width: 30%">Expected Results</th>
+          <th style="width: 50em">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="text"]</code>
+            {{ macros.inputTextRef("c01", "Phone:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Phone:", "label reference", "textbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextRef("c01", "Phone:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="text"]</code>
+            {{ macros.inputTextEnc("Phone:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Phone:", "label encapsulation", "textbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputTextEnc("Phone:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="file"]</code>
+            {{ macros.inputFileRef("c02", "File to upload:") }}
+          </td>
+          <td>
+            {{ macros.infoList("File to upload:", "label reference", "none") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputFileRef("c02", "File to upload:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="file"]</code>
+            {{ macros.inputFileEnc("File to upload:") }}
+          </td>
+          <td>
+            {{ macros.infoList("File to upload:", "label encapsulation", "none") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputFileEnc("File to upload:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="password"]</code>
+            {{ macros.inputPasswordRef("c03", "Password:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Password:", "label reference", "textbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputPasswordRef("c03", "Password:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="password"]</code>
+            {{ macros.inputPasswordEnc("Password:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Password:", "label encapsulation", "textbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputPasswordEnc("Password:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="checkbox"]</code>
+            {{ macros.inputCheckboxRef("c04", "Include library") }}
+          </td>
+          <td>
+            {{ macros.infoList("Include library", "label reference", "checkbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputCheckboxRef("c04", "Include library") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="checkbox"]</code>
+            {{ macros.inputCheckboxEnc("Include library") }}
+          </td>
+          <td>
+            {{ macros.infoList("Include library", "label encapsulation", "checkbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputCheckboxEnc("Include library") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="radio"]</code>
+            {{ macros.inputRadioRef("c05", "Four-wheel drive") }}
+          </td>
+          <td>
+            {{ macros.infoList("Four-wheel drive", "label reference", "radio") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputRadioRef("c05", "Four-wheel drive") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="radio"]</code>
+            {{ macros.inputRadioEnc("Four-wheel drive") }}
+          </td>
+          <td>
+            {{ macros.infoList("Four-wheel drive", "label encapsulation", "radio") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputRadioEnc("Four-wheel drive") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">textarea</code>
+            {{ macros.textareaRef("c06", "Comment:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Comment:", "label reference", "textbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.textareaRef("c06", "Comment:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">textarea</code>
+            {{ macros.textareaEnc("Comment:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Comment:", "label encapsulation", "textbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.textareaEnc("Comment:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">select</code>
+            {{ macros.selectRef("c07", "Weather condition:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Weather condition:", "label reference", "listbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.selectRef("c07", "Weather condition:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">select</code>
+            {{ macros.selectEnc("Weather condition:") }}
+          </td>
+          <td>
+            {{ macros.infoList("Weather condition:", "label encapsulation", "listbox") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.selectEnc("Weather condition:") | escape }}</pre>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <h2 id="group-2">Using the <code>value</code> attribute</h2>
+    <h3>Form controls: <code>input type="button|submit|reset"</code></h3>
+
+    <table aria-labelledby="group-2">
+      <thead>
+        <tr>
+          <th style="width: 30%">Element/Test</th>
+          <th style="width: 30%">Expected Results</th>
+          <th style="width: 50em">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="button"]</code>
+            {{ macros.inputButtonVal("Launch balloons") }}
+          </td>
+          <td>
+            {{ macros.infoList("Launch balloons", "value", "button") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputButtonVal("Launch balloons") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="submit"]</code>
+            {{ macros.inputSubmitVal("Create account") }}
+          </td>
+          <td>
+            {{ macros.infoList("Create account", "value", "button") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputSubmitVal("Create account") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="reset"]</code>
+            {{ macros.inputResetVal("Reset all fields") }}
+          </td>
+          <td>
+            {{ macros.infoList("Reset all fields", "value", "button") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputResetVal("Reset all fields") | escape }}</pre>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <h2 id="group-3">Using the <code>alt</code> attribute</h2>
+    <h3>Form controls: <code>input type="image"</code></h3>
+
+    <table aria-labelledby="group-3">
+      <thead>
+        <tr>
+          <th style="width: 30%">Element/Test</th>
+          <th style="width: 30%">Expected Results</th>
+          <th style="width: 50em">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="image"]</code>
+            {{ macros.inputImageAlt("Launch balloons") }}
+          </td>
+          <td>
+            {{ macros.infoList("Launch balloons", "value", "button") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.inputImageAlt("Launch balloons") | escape }}</pre>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <h2 id="group-4">Using element content</h2>
+    <h3>Form controls: <code>button</code> element</h3>
+
+    <table aria-labelledby="group-4">
+      <thead>
+        <tr>
+          <th style="width: 30%">Element/Test</th>
+          <th style="width: 30%">Expected Results</th>
+          <th style="width: 50em">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">button</code>
+            {{ macros.buttonContent("Launch balloons") }}
+          </td>
+          <td>
+            {{ macros.infoList("Launch balloons", "value", "button") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.buttonContent("Launch balloons") | escape }}</pre>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+{% endblock %}
