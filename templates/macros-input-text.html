@@ -1,5 +1,3 @@
-<!-- input [type="text"] -->
-
 {% macro inputTextRef(id, accname) %}
 <div>
   <label for="{{ id }}">{{ accname }} </label>
@@ -50,73 +48,5 @@
 {% macro inputTextTtl(text, accname) %}
 <div>{{ text }}
   <input type="text" title="{{ accname }}">
-</div>
-{% endmacro %}
-
-<!-- select -->
-
-{% macro selectRef(id, accname) %}
-<div>
-  <label for="{{ id }}">
-    {{ accname }}
-  </label>
-  <select id="{{ id }}">
-    <option value="opt-1">Sunny</option>
-    <option value="opt-2">Cloudy</option>
-    <option value="opt-3">Rain</option>
-    <option value="opt-4">Snow</option>
-  </select>
-</div>
-{% endmacro %}
-
-{% macro selectEnc(accname) %}
-<div>
-  <label>
-    {{ accname }}
-    <select>
-      <option value="opt-1">Sunny</option>
-      <option value="opt-2">Cloudy</option>
-      <option value="opt-3">Rain</option>
-      <option value="opt-4">Snow</option>
-    </select>
-  </label>
-</div>
-{% endmacro %}
-
-{% macro selectAlb(id, accname) %}
-<div>
-  <span id="{{ id }}">
-    {{ accname }}
-  </span>
-  <select aria-labelledby="{{ id }}">
-    <option value="opt-1">Sunny</option>
-    <option value="opt-2">Cloudy</option>
-    <option value="opt-3">Rain</option>
-    <option value="opt-4">Snow</option>
-  </select>
-</div>
-{% endmacro %}
-
-{% macro selectArl(text, accname) %}
-<div>
-  <span>{{ text }} </span>
-  <select aria-label="{{ accname }}">
-    <option value="opt-1">Sunny</option>
-    <option value="opt-2">Cloudy</option>
-    <option value="opt-3">Rain</option>
-    <option value="opt-4">Snow</option>
-  </select>
-</div>
-{% endmacro %}
-
-{% macro selectTtl(text, accname) %}
-<div>
-  <span>{{ text }} </span>
-  <select title="{{ accname }}">
-    <option value="opt-1">Sunny</option>
-    <option value="opt-2">Cloudy</option>
-    <option value="opt-3">Rain</option>
-    <option value="opt-4">Snow</option>
-  </select>
 </div>
 {% endmacro %}
