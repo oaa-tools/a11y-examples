@@ -58,7 +58,7 @@ img {
 }
 
 code {
-  font-family: Courier, Monospace;
+  font-family: Courier, monospace;
   font-weight: bold;
 }
 
@@ -67,8 +67,13 @@ code.element {
   margin-bottom: 1.25em;
 }
 
+.above {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
 pre.src {
-  font-family: Courier, Monospace;
+  font-family: Courier, monospace;
   font-size: 95%;
   margin-top: 0.25em;
   padding: 0;
