@@ -67,9 +67,14 @@ code.element {
   margin-bottom: 1.25em;
 }
 
-label.above, label > div {
+.above, label > div {
   display: block;
   margin-bottom: 0.5em;
+}
+
+.below {
+  display: block;
+  margin-top: 0.5em;
 }
 
 pre.src {
