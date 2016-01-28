@@ -171,6 +171,79 @@
 </div>
 {% endmacro %}
 
+<!-- meter -->
+
+{% macro meterRef(id, accname) %}
+<div>
+  <label for="{{ id }}" class="above">
+    {{ accname }}
+  </label>
+  <meter id="{{ id }}" min="1"
+      max="5" value="3"></meter>
+</div>
+{% endmacro %}
+
+{% macro meterEnc(accname) %}
+<div>
+  <label>
+    <div>{{ accname }}</div>
+    <meter min="1" max="5"
+        value="3"></meter>
+  </label>
+</div>
+{% endmacro %}
+
+<!-- output -->
+
+{% macro outputRef(id, accname) %}
+<form oninput="output1.value=range1.value">
+  <label>
+    <div>Select percentage:</div>
+    <input type="range" name="range1">
+  </label>
+  <div class="below">
+    <label for="{{ id }}">
+      {{ accname }}
+    </label>
+    <output id="{{ id }}" name="output1"></output>
+  </div>
+</form>
+{% endmacro %}
+
+{% macro outputEnc(accname) %}
+<form oninput="output2.value=range2.value">
+  <label>
+    <div>Select percentage:</div>
+    <input type="range" name="range2">
+  </label>
+  <label class="below">
+    {{ accname }}
+    <output name="output2"></output>
+  </label>
+</form>
+{% endmacro %}
+
+<!-- progress -->
+
+{% macro progressRef(id, accname) %}
+<div>
+  <label for="{{ id }}" class="above">
+    {{ accname }}
+  </label>
+  <progress id="{{ id }}" max="100"
+      value="70"></progress>
+</div>
+{% endmacro %}
+
+{% macro progressEnc(accname) %}
+<div>
+  <label>
+    <div>{{ accname }}</div>
+    <progress max="100" value="70"></progress>
+  </label>
+</div>
+{% endmacro %}
+
 <!-- USING VALUE ATTRIBUTE -->
 
 <!-- input type: button, submit, reset -->
