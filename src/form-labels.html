@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros-common.html" as common %}
 {% import "macros-form-labels.html" as macros %}
 {% set title = "Labeling Techniques for Form Controls: Native Semantics" %}
 
@@ -19,13 +20,13 @@
         <tr>
           <td class="test-box">
             <code class="element">input[type="text"]</code>
-            {{ macros.inputTextRef("c01", "Phone:") }}
+            {{ macros.inputTextRef("c1", "Phone:") }}
           </td>
           <td>
-            {{ macros.infoList("Phone:", "label reference", "textbox") }}
+            {{ common.infoList("Phone:", "label reference", "textbox") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputTextRef("c01", "Phone:") | escape }}</pre>
+            <pre class="src">{{ macros.inputTextRef("c1", "Phone:") | escape }}</pre>
           </td>
         </tr>
 
@@ -35,7 +36,7 @@
             {{ macros.inputTextEnc("Phone:") }}
           </td>
           <td>
-            {{ macros.infoList("Phone:", "label encapsulation", "textbox") }}
+            {{ common.infoList("Phone:", "label encapsulation", "textbox") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputTextEnc("Phone:") | escape }}</pre>
@@ -45,13 +46,13 @@
         <tr>
           <td class="test-box">
             <code class="element">input[type="file"]</code>
-            {{ macros.inputFileRef("c02", "File to upload:") }}
+            {{ macros.inputFileRef("c2", "File to upload:") }}
           </td>
           <td>
-            {{ macros.infoList("File to upload:", "label reference", "none") }}
+            {{ common.infoList("File to upload:", "label reference", "none") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputFileRef("c02", "File to upload:") | escape }}</pre>
+            <pre class="src">{{ macros.inputFileRef("c2", "File to upload:") | escape }}</pre>
           </td>
         </tr>
 
@@ -61,7 +62,7 @@
             {{ macros.inputFileEnc("File to upload:") }}
           </td>
           <td>
-            {{ macros.infoList("File to upload:", "label encapsulation", "none") }}
+            {{ common.infoList("File to upload:", "label encapsulation", "none") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputFileEnc("File to upload:") | escape }}</pre>
@@ -71,13 +72,13 @@
         <tr>
           <td class="test-box">
             <code class="element">input[type="password"]</code>
-            {{ macros.inputPasswordRef("c03", "Password:") }}
+            {{ macros.inputPasswordRef("c3", "Password:") }}
           </td>
           <td>
-            {{ macros.infoList("Password:", "label reference", "textbox") }}
+            {{ common.infoList("Password:", "label reference", "textbox") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputPasswordRef("c03", "Password:") | escape }}</pre>
+            <pre class="src">{{ macros.inputPasswordRef("c3", "Password:") | escape }}</pre>
           </td>
         </tr>
 
@@ -87,7 +88,7 @@
             {{ macros.inputPasswordEnc("Password:") }}
           </td>
           <td>
-            {{ macros.infoList("Password:", "label encapsulation", "textbox") }}
+            {{ common.infoList("Password:", "label encapsulation", "textbox") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputPasswordEnc("Password:") | escape }}</pre>
@@ -97,13 +98,13 @@
         <tr>
           <td class="test-box">
             <code class="element">input[type="number"]</code>
-            {{ macros.inputNumberRef("c04", "Commits:") }}
+            {{ macros.inputNumberRef("c4", "Commits:") }}
           </td>
           <td>
-            {{ macros.infoList("Commits:", "label reference", "spinbutton") }}
+            {{ common.infoList("Commits:", "label reference", "spinbutton") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputNumberRef("c04", "Commits:") | escape }}</pre>
+            <pre class="src">{{ macros.inputNumberRef("c4", "Commits:") | escape }}</pre>
           </td>
         </tr>
 
@@ -113,7 +114,7 @@
             {{ macros.inputNumberEnc("Commits:") }}
           </td>
           <td>
-            {{ macros.infoList("Commits:", "label encapsulation", "spinbutton") }}
+            {{ common.infoList("Commits:", "label encapsulation", "spinbutton") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputNumberEnc("Commits:") | escape }}</pre>
@@ -123,13 +124,13 @@
         <tr>
           <td class="test-box">
             <code class="element">input[type="range"]</code>
-            {{ macros.inputRangeRef("c05", "Saturation:") }}
+            {{ macros.inputRangeRef("c5", "Saturation:") }}
           </td>
           <td>
-            {{ macros.infoList("Saturation:", "label reference", "slider") }}
+            {{ common.infoList("Saturation:", "label reference", "slider") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputRangeRef("c05", "Saturation:") | escape }}</pre>
+            <pre class="src">{{ macros.inputRangeRef("c5", "Saturation:") | escape }}</pre>
           </td>
         </tr>
 
@@ -139,7 +140,7 @@
             {{ macros.inputRangeEnc("Saturation:") }}
           </td>
           <td>
-            {{ macros.infoList("Saturation:", "label encapsulation", "slider") }}
+            {{ common.infoList("Saturation:", "label encapsulation", "slider") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputRangeEnc("Saturation:") | escape }}</pre>
@@ -149,13 +150,13 @@
         <tr>
           <td class="test-box">
             <code class="element">input[type="checkbox"]</code>
-            {{ macros.inputCheckboxRef("c06", "Include library") }}
+            {{ macros.inputCheckboxRef("c6", "Include library") }}
           </td>
           <td>
-            {{ macros.infoList("Include library", "label reference", "checkbox") }}
+            {{ common.infoList("Include library", "label reference", "checkbox") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputCheckboxRef("c06", "Include library") | escape }}</pre>
+            <pre class="src">{{ macros.inputCheckboxRef("c6", "Include library") | escape }}</pre>
           </td>
         </tr>
 
@@ -165,7 +166,7 @@
             {{ macros.inputCheckboxEnc("Include library") }}
           </td>
           <td>
-            {{ macros.infoList("Include library", "label encapsulation", "checkbox") }}
+            {{ common.infoList("Include library", "label encapsulation", "checkbox") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputCheckboxEnc("Include library") | escape }}</pre>
@@ -175,13 +176,13 @@
         <tr>
           <td class="test-box">
             <code class="element">input[type="radio"]</code>
-            {{ macros.inputRadioRef("c07", "Four-wheel drive") }}
+            {{ macros.inputRadioRef("c7", "Four-wheel drive") }}
           </td>
           <td>
-            {{ macros.infoList("Four-wheel drive", "label reference", "radio") }}
+            {{ common.infoList("Four-wheel drive", "label reference", "radio") }}
           </td>
           <td>
-            <pre class="src">{{ macros.inputRadioRef("c07", "Four-wheel drive") | escape }}</pre>
+            <pre class="src">{{ macros.inputRadioRef("c7", "Four-wheel drive") | escape }}</pre>
           </td>
         </tr>
 
@@ -191,7 +192,7 @@
             {{ macros.inputRadioEnc("Four-wheel drive") }}
           </td>
           <td>
-            {{ macros.infoList("Four-wheel drive", "label encapsulation", "radio") }}
+            {{ common.infoList("Four-wheel drive", "label encapsulation", "radio") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputRadioEnc("Four-wheel drive") | escape }}</pre>
@@ -201,13 +202,13 @@
         <tr>
           <td class="test-box">
             <code class="element">textarea</code>
-            {{ macros.textareaRef("c08", "Comment:") }}
+            {{ macros.textareaRef("c8", "Comment:") }}
           </td>
           <td>
-            {{ macros.infoList("Comment:", "label reference", "textbox") }}
+            {{ common.infoList("Comment:", "label reference", "textbox") }}
           </td>
           <td>
-            <pre class="src">{{ macros.textareaRef("c08", "Comment:") | escape }}</pre>
+            <pre class="src">{{ macros.textareaRef("c8", "Comment:") | escape }}</pre>
           </td>
         </tr>
 
@@ -217,7 +218,7 @@
             {{ macros.textareaEnc("Comment:") }}
           </td>
           <td>
-            {{ macros.infoList("Comment:", "label encapsulation", "textbox") }}
+            {{ common.infoList("Comment:", "label encapsulation", "textbox") }}
           </td>
           <td>
             <pre class="src">{{ macros.textareaEnc("Comment:") | escape }}</pre>
@@ -227,13 +228,13 @@
         <tr>
           <td class="test-box">
             <code class="element">select</code>
-            {{ macros.selectRef("c09", "Weather condition:") }}
+            {{ macros.selectRef("c9", "Weather condition:") }}
           </td>
           <td>
-            {{ macros.infoList("Weather condition:", "label reference", "listbox") }}
+            {{ common.infoList("Weather condition:", "label reference", "listbox") }}
           </td>
           <td>
-            <pre class="src">{{ macros.selectRef("c09", "Weather condition:") | escape }}</pre>
+            <pre class="src">{{ macros.selectRef("c9", "Weather condition:") | escape }}</pre>
           </td>
         </tr>
 
@@ -243,7 +244,7 @@
             {{ macros.selectEnc("Weather condition:") }}
           </td>
           <td>
-            {{ macros.infoList("Weather condition:", "label encapsulation", "listbox") }}
+            {{ common.infoList("Weather condition:", "label encapsulation", "listbox") }}
           </td>
           <td>
             <pre class="src">{{ macros.selectEnc("Weather condition:") | escape }}</pre>
@@ -272,7 +273,7 @@
             {{ macros.inputButtonVal("Launch balloons") }}
           </td>
           <td>
-            {{ macros.infoList("Launch balloons", "value", "button") }}
+            {{ common.infoList("Launch balloons", "value", "button") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputButtonVal("Launch balloons") | escape }}</pre>
@@ -285,7 +286,7 @@
             {{ macros.inputSubmitVal("Create account") }}
           </td>
           <td>
-            {{ macros.infoList("Create account", "value", "button") }}
+            {{ common.infoList("Create account", "value", "button") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputSubmitVal("Create account") | escape }}</pre>
@@ -298,7 +299,7 @@
             {{ macros.inputResetVal("Reset all fields") }}
           </td>
           <td>
-            {{ macros.infoList("Reset all fields", "value", "button") }}
+            {{ common.infoList("Reset all fields", "value", "button") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputResetVal("Reset all fields") | escape }}</pre>
@@ -327,7 +328,7 @@
             {{ macros.inputImageAlt("Launch balloons") }}
           </td>
           <td>
-            {{ macros.infoList("Launch balloons", "alt", "button") }}
+            {{ common.infoList("Launch balloons", "alt", "button") }}
           </td>
           <td>
             <pre class="src">{{ macros.inputImageAlt("Launch balloons") | escape }}</pre>
@@ -356,7 +357,7 @@
             {{ macros.buttonContent("Launch balloons") }}
           </td>
           <td>
-            {{ macros.infoList("Launch balloons", "contents", "button") }}
+            {{ common.infoList("Launch balloons", "contents", "button") }}
           </td>
           <td>
             <pre class="src">{{ macros.buttonContent("Launch balloons") | escape }}</pre>
