@@ -1,39 +1,12 @@
 {% extends "base.html" %}
 
-{% set title = "Accessible Name Calculations" %}
+{% set title = "Accessibility Examples" %}
 
-{% block content %}
-<h2>Form Controls: Labeling Techniques from WCAG 2.0</h2>
-
-<p><a href="https://www.w3.org/TR/WCAG20-TECHS/H44.html">H44: Using label elements to associate text labels with form controls</a></p>
-
-<blockquote>
-<p>Note that the label is positioned after input elements of type="checkbox" and type="radio".</p>
-
-<p>Note 1: Elements that use explicitly associated labels are:</p>
-
-<ul>
-<li>input type="text"</li>
-<li>input type="checkbox"</li>
-<li>input type="radio"</li>
-<li>input type="file"</li>
-<li>input type="password"</li>
-<li>textarea</li>
-<li>select</li>
-</ul>
-
-<p>Note 2: The label element is not used for the following because labels for these elements are provided via the value attribute (for Submit and Reset buttons), the alt attribute (for image buttons), or element content itself (button).</p>
-
-<ul>
-<li>Submit and Reset buttons ( input type="submit" or input type="reset")</li>
-<li>Image buttons ( input type="image")</li>
-<li>Hidden input fields ( input type="hidden")</li>
-<li>Script buttons (button elements or input type="button")</li>
-</ul>
-
-<p>Editor&apos;s Note (NH): labels for input type="button" are also provided via the value attribute.</p>
-</blockquote>
-
-<p><a href="https://www.w3.org/TR/WCAG20-TECHS/G167.html">G167: Using an adjacent button to label the purpose of a field</a></p>
-
-{% endblock %}
+{% block content -%}
+    <ul class="home">
+      <li><a href="form-labels.html">Examples: Labeling Form Controls Using Native Semantics</a></li>
+      <li><a href="input-text.html">Examples: Accessible Name for <code>input[type=text]</code> element</a></li>
+      <li><a href="select.html">Examples: Accessible Name for <code>select</code> element</a></li>
+      <li><a href="wcag-tech.html">WCAG 2.0 Techniques: Labeling Form Controls</a></li>
+    </ul>
+{%- endblock %}
