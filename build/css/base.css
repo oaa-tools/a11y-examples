@@ -83,3 +83,13 @@ pre.src {
   margin-top: 0.25em;
   padding: 0;
 }
+
+ul.home {
+  padding-left: 1.5em;
+}
+
+ul.home > li {
+  font-size: 120%;
+  margin: 1em 0 0 0;
+  padding: 0;
+}
