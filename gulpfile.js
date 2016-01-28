@@ -11,3 +11,13 @@ gulp.task('default', function () {
   gulp.src('src/css/*.css')
     .pipe(gulp.dest('build/css'));
 });
+
+var tar = require('gulp-tar');
+var gzip = require('gulp-gzip');
+
+gulp.task('archive', function() {
+  gulp.src('build/**/*')
+  .pipe(tar('examples.tar'))
+  .pipe(gzip())
+  .pipe(gulp.dest('.'));
+});

@@ -5,12 +5,12 @@
   "main": "index.js",
   "author": "Nicholas Hoyt",
   "license": "Apache-2.0",
-
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-nunjucks-render": "^1.1.0"
+    "gulp-gzip": "^1.2.0",
+    "gulp-nunjucks-render": "^1.1.0",
+    "gulp-tar": "^1.8.0"
   },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
