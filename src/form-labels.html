@@ -5,7 +5,8 @@
 
 {% block content %}
     <h2 id="group-1">Using the <code>label</code> element</h2>
-    <h3>Form controls: <code>input type="text|file|password|number|range|checkbox|radio", textarea, select</code></h3>
+    <h3>Form controls: <code>input type="text|file|password|number|range|checkbox|radio",<br>
+    textarea, select, meter, output, progress</code></h3>
 
     <table aria-labelledby="group-1">
       <thead>
@@ -248,6 +249,84 @@
           </td>
           <td>
             <pre class="src">{{ macros.selectEnc("Weather condition:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">meter</code>
+            {{ macros.meterRef("c10", "Level:") }}
+          </td>
+          <td>
+            {{ common.infoList("Level:", "label reference", "progressbar") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.meterRef("c10", "Level:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">meter</code>
+            {{ macros.meterEnc("Level:") }}
+          </td>
+          <td>
+            {{ common.infoList("Level:", "label encapsulation", "progressbar") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.meterEnc("Level:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">output</code>
+            {{ macros.outputRef("c11", "Result:") }}
+          </td>
+          <td>
+            {{ common.infoList("Result:", "label reference", "status") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.outputRef("c11", "Result:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">output</code>
+            {{ macros.outputEnc("Result:") }}
+          </td>
+          <td>
+            {{ common.infoList("Result:", "label encapsulation", "status") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.outputEnc("Result:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">progress</code>
+            {{ macros.progressRef("c12", "Percent complete:") }}
+          </td>
+          <td>
+            {{ common.infoList("Percent complete:", "label reference", "progressbar") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.progressRef("c12", "Percent complete:") | escape }}</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">progress</code>
+            {{ macros.progressEnc("Percent complete:") }}
+          </td>
+          <td>
+            {{ common.infoList("Percent complete:", "label encapsulation", "progressbar") }}
+          </td>
+          <td>
+            <pre class="src">{{ macros.progressEnc("Percent complete:") | escape }}</pre>
           </td>
         </tr>
 

@@ -13,7 +13,8 @@
   <main>
     
     <h2 id="group-1">Using the <code>label</code> element</h2>
-    <h3>Form controls: <code>input type="text|file|password|number|range|checkbox|radio", textarea, select</code></h3>
+    <h3>Form controls: <code>input type="text|file|password|number|range|checkbox|radio",<br>
+    textarea, select, meter, output, progress</code></h3>
 
     <table aria-labelledby="group-1">
       <thead>
@@ -579,6 +580,218 @@
       &lt;option value=&quot;opt-3&quot;&gt;Rain&lt;/option&gt;
       &lt;option value=&quot;opt-4&quot;&gt;Snow&lt;/option&gt;
     &lt;/select&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">meter</code>
+            
+<div>
+  <label for="c10" class="above">
+    Level:
+  </label>
+  <meter id="c10" min="1"
+      max="5" value="3"></meter>
+</div>
+
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Level:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: progressbar</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">
+&lt;div&gt;
+  &lt;label for=&quot;c10&quot; class=&quot;above&quot;&gt;
+    Level:
+  &lt;/label&gt;
+  &lt;meter id=&quot;c10&quot; min=&quot;1&quot;
+      max=&quot;5&quot; value=&quot;3&quot;&gt;&lt;/meter&gt;
+&lt;/div&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">meter</code>
+            
+<div>
+  <label>
+    <div>Level:</div>
+    <meter min="1" max="5"
+        value="3"></meter>
+  </label>
+</div>
+
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Level:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: progressbar</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">
+&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;Level:&lt;/div&gt;
+    &lt;meter min=&quot;1&quot; max=&quot;5&quot;
+        value=&quot;3&quot;&gt;&lt;/meter&gt;
+  &lt;/label&gt;
+&lt;/div&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">output</code>
+            
+<form oninput="output1.value=range1.value">
+  <label>
+    <div>Select percentage:</div>
+    <input type="range" name="range1">
+  </label>
+  <div class="below">
+    <label for="c11">
+      Result:
+    </label>
+    <output id="c11" name="output1"></output>
+  </div>
+</form>
+
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Result:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: status</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">
+&lt;form oninput=&quot;output1.value=range1.value&quot;&gt;
+  &lt;label&gt;
+    &lt;div&gt;Select percentage:&lt;/div&gt;
+    &lt;input type=&quot;range&quot; name=&quot;range1&quot;&gt;
+  &lt;/label&gt;
+  &lt;div class=&quot;below&quot;&gt;
+    &lt;label for=&quot;c11&quot;&gt;
+      Result:
+    &lt;/label&gt;
+    &lt;output id=&quot;c11&quot; name=&quot;output1&quot;&gt;&lt;/output&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">output</code>
+            
+<form oninput="output2.value=range2.value">
+  <label>
+    <div>Select percentage:</div>
+    <input type="range" name="range2">
+  </label>
+  <label class="below">
+    Result:
+    <output name="output2"></output>
+  </label>
+</form>
+
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Result:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: status</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">
+&lt;form oninput=&quot;output2.value=range2.value&quot;&gt;
+  &lt;label&gt;
+    &lt;div&gt;Select percentage:&lt;/div&gt;
+    &lt;input type=&quot;range&quot; name=&quot;range2&quot;&gt;
+  &lt;/label&gt;
+  &lt;label class=&quot;below&quot;&gt;
+    Result:
+    &lt;output name=&quot;output2&quot;&gt;&lt;/output&gt;
+  &lt;/label&gt;
+&lt;/form&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">progress</code>
+            
+<div>
+  <label for="c12" class="above">
+    Percent complete:
+  </label>
+  <progress id="c12" max="100"
+      value="70"></progress>
+</div>
+
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Percent complete:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: progressbar</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">
+&lt;div&gt;
+  &lt;label for=&quot;c12&quot; class=&quot;above&quot;&gt;
+    Percent complete:
+  &lt;/label&gt;
+  &lt;progress id=&quot;c12&quot; max=&quot;100&quot;
+      value=&quot;70&quot;&gt;&lt;/progress&gt;
+&lt;/div&gt;
+</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">progress</code>
+            
+<div>
+  <label>
+    <div>Percent complete:</div>
+    <progress max="100" value="70"></progress>
+  </label>
+</div>
+
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Percent complete:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: progressbar</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">
+&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;Percent complete:&lt;/div&gt;
+    &lt;progress max=&quot;100&quot; value=&quot;70&quot;&gt;&lt;/progress&gt;
   &lt;/label&gt;
 &lt;/div&gt;
 </pre>
