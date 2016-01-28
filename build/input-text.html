@@ -12,36 +12,35 @@
   </header>
   <main>
     
-    <h2 id="test1">Labeling Techniques: <code>input[type="text"]</code></h2>
+    <h2 id="test1">Element: <code>input[type="text"]</code></h2>
 
     <table aria-labelledby="test1">
       <thead>
         <tr>
-          <th style="width: 30%">Features</th>
-          <th style="width: 20%">Test</th>
-          <th style="width: 20%">Expected Results</th>
-          <th style="width: 30%">Test Source Code</th>
+          <th style="width: 25%">Labeling Technique</th>
+          <th style="width: 25%">Test</th>
+          <th style="width: 25%">Expected Results</th>
+          <th style="width: 40em">Test Source Code</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>
             <ul>
-              <li>labeling by reference</li>
-              <li>markup: <code>label[for]</code> element</li>
+              <li><code>label</code> reference</li>
             </ul>
           </td>
           <td class="test-box">
             
 <div>
-  <label for="text-ref">Phone: </label>
-  <input type="text" id="text-ref">
+  <label for="t1">Phone:</label>
+  <input type="text" id="t1">
 </div>
 
           </td>
           <td>
             <ul>
-              <li>ACC NAME: Phone:</li>
+              <li>ACC NAME: &quot;Phone:&quot;</li>
               <li>FROM: label reference</li>
               <li>ROLE: textbox</li>
             </ul>
@@ -49,8 +48,8 @@
           <td>
             <pre class="src">
 &lt;div&gt;
-  &lt;label for=&quot;text-ref&quot;&gt;Phone: &lt;/label&gt;
-  &lt;input type=&quot;text&quot; id=&quot;text-ref&quot;&gt;
+  &lt;label for=&quot;t1&quot;&gt;Phone:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;t1&quot;&gt;
 &lt;/div&gt;
 </pre>
           </td>
@@ -59,8 +58,7 @@
         <tr>
           <td>
             <ul>
-              <li>labeling by encapsulation</li>
-              <li>markup: <code>label</code> element</li>
+              <li><code>label</code> encapsulation</li>
             </ul>
           </td>
           <td class="test-box">
@@ -74,8 +72,8 @@
           </td>
           <td>
             <ul>
-              <li>ACC NAME: Phone:</li>
-              <li>FROM: label container</li>
+              <li>ACC NAME: &quot;Phone:&quot;</li>
+              <li>FROM: label encapsulation</li>
               <li>ROLE: textbox</li>
             </ul>
           </td>
@@ -93,22 +91,21 @@
         <tr>
           <td>
             <ul>
-              <li>labeling using aria-labelledby</li>
-              <li>markup: <code>aria-labelledby</code> attribute</li>
+              <li><code>aria-labelledby</code> attribute</li>
             </ul>
           </td>
           <td class="test-box">
             
 <div>
-  <span id="text-alb">Phone: </span>
+  <span id="t2">Phone:</span>
   <input type="text"
-         aria-labelledby="text-alb">
+         aria-labelledby="t2">
 </div>
 
           </td>
           <td>
             <ul>
-              <li>ACC NAME: Phone:</li>
+              <li>ACC NAME: &quot;Phone:&quot;</li>
               <li>FROM: aria-labelledby</li>
               <li>ROLE: textbox</li>
             </ul>
@@ -116,9 +113,9 @@
           <td>
             <pre class="src">
 &lt;div&gt;
-  &lt;span id=&quot;text-alb&quot;&gt;Phone: &lt;/span&gt;
+  &lt;span id=&quot;t2&quot;&gt;Phone:&lt;/span&gt;
   &lt;input type=&quot;text&quot;
-         aria-labelledby=&quot;text-alb&quot;&gt;
+         aria-labelledby=&quot;t2&quot;&gt;
 &lt;/div&gt;
 </pre>
           </td>
@@ -127,8 +124,7 @@
         <tr>
           <td>
             <ul>
-              <li>labeling using aria-label</li>
-              <li>markup: <code>aria-label</code> attribute</li>
+              <li><code>aria-label</code> attribute</li>
             </ul>
           </td>
           <td class="test-box">
@@ -142,7 +138,7 @@
           </td>
           <td>
             <ul>
-              <li>ACC NAME: Phone number</li>
+              <li>ACC NAME: &quot;Phone number&quot;</li>
               <li>FROM: aria-label</li>
               <li>ROLE: textbox</li>
             </ul>
@@ -161,8 +157,7 @@
         <tr>
           <td>
             <ul>
-              <li>labeling using placeholder attribute</li>
-              <li>markup: <code>placeholder</code> attribute</li>
+              <li><code>placeholder</code> attribute</li>
             </ul>
           </td>
           <td class="test-box">
@@ -176,7 +171,7 @@
           </td>
           <td>
             <ul>
-              <li>ACC NAME: xxx-xxx-xxxx</li>
+              <li>ACC NAME: &quot;xxx-xxx-xxxx&quot;</li>
               <li>FROM: placeholder</li>
               <li>ROLE: textbox</li>
             </ul>
@@ -195,22 +190,21 @@
         <tr>
           <td>
             <ul>
-              <li>labeling by reference and using placeholder attribute</li>
-              <li>markup: <code>label</code> element, <code>placeholder</code> attribute</li>
+              <li><code>label</code> reference and <code>placeholder</code> attribute</li>
             </ul>
           </td>
           <td class="test-box">
             
 <div>
-  <label for="text-rpl">Phone: </label>
-  <input type="text" id="text-rpl"
+  <label for="t3">Phone:</label>
+  <input type="text" id="t3"
          placeholder="xxx-xxx-xxxx">
 </div>
 
           </td>
           <td>
             <ul>
-              <li>ACC NAME: Phone:</li>
+              <li>ACC NAME: &quot;Phone:&quot;</li>
               <li>FROM: label reference</li>
               <li>ROLE: textbox</li>
             </ul>
@@ -218,8 +212,8 @@
           <td>
             <pre class="src">
 &lt;div&gt;
-  &lt;label for=&quot;text-rpl&quot;&gt;Phone: &lt;/label&gt;
-  &lt;input type=&quot;text&quot; id=&quot;text-rpl&quot;
+  &lt;label for=&quot;t3&quot;&gt;Phone:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;t3&quot;
          placeholder=&quot;xxx-xxx-xxxx&quot;&gt;
 &lt;/div&gt;
 </pre>
@@ -229,8 +223,7 @@
         <tr>
           <td>
             <ul>
-              <li>labeling using title attribute</li>
-              <li>markup: <code>title</code> attribute</li>
+              <li><code>title</code> attribute</li>
             </ul>
           </td>
           <td class="test-box">
@@ -242,7 +235,7 @@
           </td>
           <td>
             <ul>
-              <li>ACC NAME: Phone number</li>
+              <li>ACC NAME: &quot;Phone number&quot;</li>
               <li>FROM: title</li>
               <li>ROLE: textbox</li>
             </ul>
