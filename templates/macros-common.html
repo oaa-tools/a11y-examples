@@ -1,7 +1,38 @@
-{% macro infoList(accname, from, role) -%}
-            <ul>
-              <li>ACC NAME: &quot;{{ accname }}&quot;</li>
-              <li>FROM: {{ from }}</li>
-              <li>ROLE: {{ role }}</li>
-            </ul>
+{% macro infoList(accname, from, role) %}
+<ul>
+  <li>ACC NAME: {{ accname }}</li>
+  <li>FROM: {{ from }}</li>
+  <li>ROLE: {{ role }}</li>
+</ul>
+{%- endmacro %}
+
+{% macro theadRow() -%}
+  <tr>
+    <th style="width: 25%">Labeling Technique</th>
+    <th style="width: 25%">Test</th>
+    <th style="width: 25%">Expected Results</th>
+    <th style="width: 40em">Test Source Code</th>
+  </tr>
+{%- endmacro %}
+
+{% macro row(desc, accname, from, role, text='', id='') %}
+  <tr>
+    <td><ul><li>{{ desc }}</li></ul></td>
+    <td class="test-box">
+    {% if text %}{{ caller(accname, text, id) }}
+    {% else %}{{ caller(accname, id) }}
+    {% endif %}
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: {{ accname }}</li>
+        <li>FROM: {{ from }}</li>
+        <li>ROLE: {{ role }}</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">{% if text %}{{ caller(accname, text, id) | escape }}
+      {% else %}{{ caller(accname, id) | escape }}{% endif %}</pre>
+    </td>
+  </tr>
 {%- endmacro %}
