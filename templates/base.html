@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>{{ title }}</title>
-  <link href="css/base.css" rel="stylesheet">
-  <link href="css/table.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{{ title }}</title>
+<link href="css/base.css" rel="stylesheet">
+<link href="css/table.css" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
-  <main>
-    {% block content %}base.html content{% endblock %}
-  </main>
+<header>
+  <h1>{{ title }}</h1>
+</header>
+<main>
+  {% block content %}base.html content{% endblock %}
+</main>
 </body>
 </html>
