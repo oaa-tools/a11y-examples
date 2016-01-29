@@ -522,7 +522,7 @@
     Level:
   </label>
   <meter id="c10" min="1"
-      max="5" value="3"></meter>
+         max="5" value="3"></meter>
 </div>
           </td>
           <td>
@@ -538,7 +538,7 @@
     Level:
   &lt;/label&gt;
   &lt;meter id=&quot;c10&quot; min=&quot;1&quot;
-      max=&quot;5&quot; value=&quot;3&quot;&gt;&lt;/meter&gt;
+         max=&quot;5&quot; value=&quot;3&quot;&gt;&lt;/meter&gt;
 &lt;/div&gt;</pre>
           </td>
         </tr>
@@ -550,7 +550,7 @@
   <label>
     <div>Level:</div>
     <meter min="1" max="5"
-        value="3"></meter>
+           value="3"></meter>
   </label>
 </div>
           </td>
@@ -566,7 +566,7 @@
   &lt;label&gt;
     &lt;div&gt;Level:&lt;/div&gt;
     &lt;meter min=&quot;1&quot; max=&quot;5&quot;
-        value=&quot;3&quot;&gt;&lt;/meter&gt;
+           value=&quot;3&quot;&gt;&lt;/meter&gt;
   &lt;/label&gt;
 &lt;/div&gt;</pre>
           </td>
@@ -575,16 +575,16 @@
         <tr>
           <td class="test-box">
             <code class="element">output</code>
-            <form oninput="output1.value=range1.value">
+            <form oninput="o.value=r.value">
   <label>
     <div>Select percentage:</div>
-    <input type="range" name="range1">
+    <input type="range" name="r">
   </label>
   <div class="below">
     <label for="c11">
       Result:
     </label>
-    <output id="c11" name="output1">50</output>
+    <output id="c11" name="o">50</output>
   </div>
 </form>
           </td>
@@ -596,16 +596,16 @@
 </ul>
           </td>
           <td>
-            <pre class="src">&lt;form oninput=&quot;output1.value=range1.value&quot;&gt;
+            <pre class="src">&lt;form oninput=&quot;o.value=r.value&quot;&gt;
   &lt;label&gt;
     &lt;div&gt;Select percentage:&lt;/div&gt;
-    &lt;input type=&quot;range&quot; name=&quot;range1&quot;&gt;
+    &lt;input type=&quot;range&quot; name=&quot;r&quot;&gt;
   &lt;/label&gt;
   &lt;div class=&quot;below&quot;&gt;
     &lt;label for=&quot;c11&quot;&gt;
       Result:
     &lt;/label&gt;
-    &lt;output id=&quot;c11&quot; name=&quot;output1&quot;&gt;50&lt;/output&gt;
+    &lt;output id=&quot;c11&quot; name=&quot;o&quot;&gt;50&lt;/output&gt;
   &lt;/div&gt;
 &lt;/form&gt;</pre>
           </td>
@@ -614,14 +614,14 @@
         <tr>
           <td class="test-box">
             <code class="element">output</code>
-            <form oninput="output2.value=range2.value">
+            <form oninput="o.value=r.value">
   <label>
     <div>Select percentage:</div>
-    <input type="range" name="range2">
+    <input type="range" name="r">
   </label>
   <label class="below">
     Result:
-    <output name="output2">50</output>
+    <output name="o">50</output>
   </label>
 </form>
           </td>
@@ -633,14 +633,14 @@
 </ul>
           </td>
           <td>
-            <pre class="src">&lt;form oninput=&quot;output2.value=range2.value&quot;&gt;
+            <pre class="src">&lt;form oninput=&quot;o.value=r.value&quot;&gt;
   &lt;label&gt;
     &lt;div&gt;Select percentage:&lt;/div&gt;
-    &lt;input type=&quot;range&quot; name=&quot;range2&quot;&gt;
+    &lt;input type=&quot;range&quot; name=&quot;r&quot;&gt;
   &lt;/label&gt;
   &lt;label class=&quot;below&quot;&gt;
     Result:
-    &lt;output name=&quot;output2&quot;&gt;50&lt;/output&gt;
+    &lt;output name=&quot;o&quot;&gt;50&lt;/output&gt;
   &lt;/label&gt;
 &lt;/form&gt;</pre>
           </td>
@@ -653,8 +653,7 @@
   <label for="c12" class="above">
     Percent complete:
   </label>
-  <progress id="c12" max="100"
-      value="70">
+  <progress id="c12" max="100" value="70">
 </div>
           </td>
           <td>
@@ -669,8 +668,7 @@
   &lt;label for=&quot;c12&quot; class=&quot;above&quot;&gt;
     Percent complete:
   &lt;/label&gt;
-  &lt;progress id=&quot;c12&quot; max=&quot;100&quot;
-      value=&quot;70&quot;&gt;
+  &lt;progress id=&quot;c12&quot; max=&quot;100&quot; value=&quot;70&quot;&gt;
 &lt;/div&gt;</pre>
           </td>
         </tr>
@@ -723,7 +721,7 @@
             <code class="element">input[type="button"]</code>
             <div>
   <input type="button"
-      value="Launch balloons">
+         value="Launch balloons">
 </div>
           </td>
           <td>
@@ -736,7 +734,7 @@
           <td>
             <pre class="src">&lt;div&gt;
   &lt;input type=&quot;button&quot;
-      value=&quot;Launch balloons&quot;&gt;
+         value=&quot;Launch balloons&quot;&gt;
 &lt;/div&gt;</pre>
           </td>
         </tr>
@@ -746,7 +744,7 @@
             <code class="element">input[type="submit"]</code>
             <div>
   <input type="submit"
-      value="Create account">
+         value="Create account">
 </div>
           </td>
           <td>
@@ -759,7 +757,7 @@
           <td>
             <pre class="src">&lt;div&gt;
   &lt;input type=&quot;submit&quot;
-      value=&quot;Create account&quot;&gt;
+         value=&quot;Create account&quot;&gt;
 &lt;/div&gt;</pre>
           </td>
         </tr>
@@ -769,7 +767,7 @@
             <code class="element">input[type="reset"]</code>
             <div>
   <input type="reset"
-      value="Reset all fields">
+         value="Reset all fields">
 </div>
           </td>
           <td>
@@ -782,7 +780,7 @@
           <td>
             <pre class="src">&lt;div&gt;
   &lt;input type=&quot;reset&quot;
-      value=&quot;Reset all fields&quot;&gt;
+         value=&quot;Reset all fields&quot;&gt;
 &lt;/div&gt;</pre>
           </td>
         </tr>
@@ -808,7 +806,7 @@
             <code class="element">input[type="image"]</code>
             <div>
   <input type="image"
-      alt="Launch balloons">
+         alt="Launch balloons">
 </div>
           </td>
           <td>
@@ -821,7 +819,7 @@
           <td>
             <pre class="src">&lt;div&gt;
   &lt;input type=&quot;image&quot;
-      alt=&quot;Launch balloons&quot;&gt;
+         alt=&quot;Launch balloons&quot;&gt;
 &lt;/div&gt;</pre>
           </td>
         </tr>

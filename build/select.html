@@ -17,7 +17,7 @@
 
 <table aria-labelledby="tbltitle">
 <thead>
-<tr>
+  <tr>
     <th style="width: 25%">Labeling Technique</th>
     <th style="width: 25%">Test</th>
     <th style="width: 25%">Expected Results</th>
@@ -101,10 +101,10 @@
     <td><ul><li><code>aria-labelledby</code> attribute</li></ul></td>
     <td class="test-box">
 <div>
-  <span id="c2">
+  <div id="c2" class="above">
     Weather condition:
-  </span>
-  <select aria-labelledby="c2">
+  </div>
+  <select ar class="above"ia-labelledby="c2">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
     <option value="opt-3">Rain</option>
@@ -121,10 +121,10 @@
     </td>
     <td>
       <pre class="src">&lt;div&gt;
-  &lt;span id=&quot;c2&quot;&gt;
+  &lt;div id=&quot;c2&quot; class=&quot;above&quot;&gt;
     Weather condition:
-  &lt;/span&gt;
-  &lt;select aria-labelledby=&quot;c2&quot;&gt;
+  &lt;/div&gt;
+  &lt;select ar class=&quot;above&quot;ia-labelledby=&quot;c2&quot;&gt;
     &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
     &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
     &lt;option value=&quot;opt-3&quot;&gt;Rain&lt;/option&gt;
@@ -137,7 +137,7 @@
     <td><ul><li><code>aria-label</code> attribute</li></ul></td>
     <td class="test-box">
 <div>
-  <span>Weather condition: </span>
+  <div class="above">Weather condition:</div>
   <select aria-label="Current weather condition">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
@@ -155,7 +155,7 @@
     </td>
     <td>
       <pre class="src">&lt;div&gt;
-  &lt;span&gt;Weather condition: &lt;/span&gt;
+  &lt;div class=&quot;above&quot;&gt;Weather condition:&lt;/div&gt;
   &lt;select aria-label=&quot;Current weather condition&quot;&gt;
     &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
     &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
@@ -170,7 +170,7 @@
     <td><ul><li><code>title</code> attribute</li></ul></td>
     <td class="test-box">
 <div>
-  <span>Weather condition: </span>
+  <div class="above">Weather condition:</div>
   <select title="Current weather condition">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
@@ -188,7 +188,7 @@
     </td>
     <td>
       <pre class="src">&lt;div&gt;
-  &lt;span&gt;Weather condition: &lt;/span&gt;
+  &lt;div class=&quot;above&quot;&gt;Weather condition:&lt;/div&gt;
   &lt;select title=&quot;Current weather condition&quot;&gt;
     &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
     &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
