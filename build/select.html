@@ -9,76 +9,64 @@
 
 <body>
 <header>
-  <h1>Examples: Accessible Name for <code>select</code> element</h1>
+<h1>Examples: Accessible Name for <code>select</code> element</h1>
 </header>
-<main>
-    <h2>The various techniques for associating an accessible name with <code>select</code></h2>
 
-    <table aria-labelledby="test1">
-      <thead>
-        <tr>
-          <th style="width: 25%">Features</th>
-          <th style="width: 20%">Test</th>
-          <th style="width: 25%">Expected Results</th>
-          <th style="width: 30%">Test Source Code</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <ul>
-              <li>labeling by reference</li>
-              <li>markup: <code>label[for]</code> element</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
-  <label for="sel-ref">
-    Weather Condition:
+<main>
+<h2 id="tbltitle">The various techniques for associating an accessible name with <code>select</code></h2>
+
+<table aria-labelledby="tbltitle">
+<thead>
+<tr>
+    <th style="width: 25%">Labeling Technique</th>
+    <th style="width: 25%">Test</th>
+    <th style="width: 25%">Expected Results</th>
+    <th style="width: 40em">Test Source Code</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><ul><li><code>label</code> reference</li></ul></td>
+    <td class="test-box">
+<div>
+  <label for="c1" class="above">
+    Weather condition:
   </label>
-  <select id="sel-ref">
+  <select id="c1">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
     <option value="opt-3">Rain</option>
     <option value="opt-4">Snow</option>
   </select>
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: Weather Condition:</li>
-              <li>FROM: label reference</li>
-              <li>ROLE: listbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
-  &lt;label for=&quot;sel-ref&quot;&gt;
-    Weather Condition:
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Weather condition:</li>
+        <li>FROM: label reference</li>
+        <li>ROLE: listbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c1&quot; class=&quot;above&quot;&gt;
+    Weather condition:
   &lt;/label&gt;
-  &lt;select id=&quot;sel-ref&quot;&gt;
+  &lt;select id=&quot;c1&quot;&gt;
     &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
     &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
     &lt;option value=&quot;opt-3&quot;&gt;Rain&lt;/option&gt;
     &lt;option value=&quot;opt-4&quot;&gt;Snow&lt;/option&gt;
   &lt;/select&gt;
-&lt;/div&gt;
-</pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li>labeling by encapsulation</li>
-              <li>markup: <code>label</code> element</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
+&lt;/div&gt;</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>label</code> encapsulation</li></ul></td>
+    <td class="test-box">
+<div>
   <label>
-    Weather Condition:
+    <div>Weather condition:</div>
     <select>
       <option value="opt-1">Sunny</option>
       <option value="opt-2">Cloudy</option>
@@ -87,19 +75,18 @@
     </select>
   </label>
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: Weather Condition:</li>
-              <li>FROM: label container</li>
-              <li>ROLE: listbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Weather condition:</li>
+        <li>FROM: label encapsulation</li>
+        <li>ROLE: listbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
   &lt;label&gt;
-    Weather Condition:
+    &lt;div&gt;Weather condition:&lt;/div&gt;
     &lt;select&gt;
       &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
       &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
@@ -107,65 +94,50 @@
       &lt;option value=&quot;opt-4&quot;&gt;Snow&lt;/option&gt;
     &lt;/select&gt;
   &lt;/label&gt;
-&lt;/div&gt;
-</pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li>labeling using aria-labelledby</li>
-              <li>markup: <code>aria-labelledby</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
-  <span id="sel-alb">
-    Weather Condition:
+&lt;/div&gt;</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>aria-labelledby</code> attribute</li></ul></td>
+    <td class="test-box">
+<div>
+  <span id="c2">
+    Weather condition:
   </span>
-  <select aria-labelledby="sel-alb">
+  <select aria-labelledby="c2">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
     <option value="opt-3">Rain</option>
     <option value="opt-4">Snow</option>
   </select>
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: Weather Condition:</li>
-              <li>FROM: aria-labelledby</li>
-              <li>ROLE: listbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
-  &lt;span id=&quot;sel-alb&quot;&gt;
-    Weather Condition:
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Weather condition:</li>
+        <li>FROM: aria-labelledby</li>
+        <li>ROLE: listbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
+  &lt;span id=&quot;c2&quot;&gt;
+    Weather condition:
   &lt;/span&gt;
-  &lt;select aria-labelledby=&quot;sel-alb&quot;&gt;
+  &lt;select aria-labelledby=&quot;c2&quot;&gt;
     &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
     &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
     &lt;option value=&quot;opt-3&quot;&gt;Rain&lt;/option&gt;
     &lt;option value=&quot;opt-4&quot;&gt;Snow&lt;/option&gt;
   &lt;/select&gt;
-&lt;/div&gt;
-</pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li>labeling using aria-label</li>
-              <li>markup: <code>aria-label</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
-  <span>Weather Condition: </span>
+&lt;/div&gt;</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>aria-label</code> attribute</li></ul></td>
+    <td class="test-box">
+<div>
+  <span>Weather condition: </span>
   <select aria-label="Current weather condition">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
@@ -173,18 +145,17 @@
     <option value="opt-4">Snow</option>
   </select>
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: Current weather condition</li>
-              <li>FROM: aria-label</li>
-              <li>ROLE: listbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
-  &lt;span&gt;Weather Condition: &lt;/span&gt;
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Current weather condition</li>
+        <li>FROM: aria-label</li>
+        <li>ROLE: listbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
+  &lt;span&gt;Weather condition: &lt;/span&gt;
   &lt;select aria-label=&quot;Current weather condition&quot;&gt;
     &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
     &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
@@ -193,19 +164,13 @@
   &lt;/select&gt;
 &lt;/div&gt;
 </pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li>labeling using title attribute</li>
-              <li>markup: <code>title</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
-  <span>Weather Condition: </span>
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>title</code> attribute</li></ul></td>
+    <td class="test-box">
+<div>
+  <span>Weather condition: </span>
   <select title="Current weather condition">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
@@ -213,18 +178,17 @@
     <option value="opt-4">Snow</option>
   </select>
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: Current weather condition</li>
-              <li>FROM: title</li>
-              <li>ROLE: listbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
-  &lt;span&gt;Weather Condition: &lt;/span&gt;
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Current weather condition</li>
+        <li>FROM: title</li>
+        <li>ROLE: listbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
+  &lt;span&gt;Weather condition: &lt;/span&gt;
   &lt;select title=&quot;Current weather condition&quot;&gt;
     &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
     &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
@@ -233,10 +197,11 @@
   &lt;/select&gt;
 &lt;/div&gt;
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    </td>
+  </tr>
+</tbody>
+</table>
 </main>
+
 </body>
 </html>

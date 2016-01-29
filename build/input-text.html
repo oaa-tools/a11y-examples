@@ -9,233 +9,191 @@
 
 <body>
 <header>
-  <h1>Examples: Accessible Name for <code>input[type=text]</code> element</h1>
+<h1>Examples: Accessible Name for <code>input[type=text]</code> element</h1>
 </header>
+
 <main>
-    <h2>The various techniques for associating an accessible name with <code>input[type=text]</code></h2>
+<h2 id="tbltitle">The various techniques for associating an accessible name with <code>input[type=text]</code></h2>
 
-    <table aria-labelledby="test1">
-      <thead>
-        <tr>
-          <th style="width: 25%">Labeling Technique</th>
-          <th style="width: 25%">Test</th>
-          <th style="width: 25%">Expected Results</th>
-          <th style="width: 40em">Test Source Code</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <ul>
-              <li><code>label</code> reference</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
-  <label for="t1">Phone:</label>
-  <input type="text" id="t1">
+<table aria-labelledby="tbltitle">
+<thead>
+  <tr>
+    <th style="width: 25%">Labeling Technique</th>
+    <th style="width: 25%">Test</th>
+    <th style="width: 25%">Expected Results</th>
+    <th style="width: 40em">Test Source Code</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><ul><li><code>label</code> reference</li></ul></td>
+    <td class="test-box">
+<div>
+  <label for="c1">Phone:</label>
+  <input type="text" id="c1">
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: &quot;Phone:&quot;</li>
-              <li>FROM: label reference</li>
-              <li>ROLE: textbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
-  &lt;label for=&quot;t1&quot;&gt;Phone:&lt;/label&gt;
-  &lt;input type=&quot;text&quot; id=&quot;t1&quot;&gt;
-&lt;/div&gt;
-</pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li><code>label</code> encapsulation</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Phone:</li>
+        <li>FROM: label reference</li>
+        <li>ROLE: textbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c1&quot;&gt;Phone:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;c1&quot;&gt;
+&lt;/div&gt;</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>label</code> encapsulation</li></ul></td>
+    <td class="test-box">
+<div>
   <label>Phone:
     <input type="text">
   </label>
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: &quot;Phone:&quot;</li>
-              <li>FROM: label encapsulation</li>
-              <li>ROLE: textbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Phone:</li>
+        <li>FROM: label encapsulation</li>
+        <li>ROLE: textbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
   &lt;label&gt;Phone:
     &lt;input type=&quot;text&quot;&gt;
   &lt;/label&gt;
-&lt;/div&gt;
-</pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li><code>aria-labelledby</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
-  <span id="t2">Phone:</span>
+&lt;/div&gt;</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>aria-labelledby</code> attribute</li></ul></td>
+    <td class="test-box">
+<div>
+  <span id="c2">Phone:</span>
   <input type="text"
-         aria-labelledby="t2">
+         aria-labelledby="c2">
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: &quot;Phone:&quot;</li>
-              <li>FROM: aria-labelledby</li>
-              <li>ROLE: textbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
-  &lt;span id=&quot;t2&quot;&gt;Phone:&lt;/span&gt;
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Phone:</li>
+        <li>FROM: aria-labelledby</li>
+        <li>ROLE: textbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
+  &lt;span id=&quot;c2&quot;&gt;Phone:&lt;/span&gt;
   &lt;input type=&quot;text&quot;
-         aria-labelledby=&quot;t2&quot;&gt;
-&lt;/div&gt;
-</pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li><code>aria-label</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
+         aria-labelledby=&quot;c2&quot;&gt;
+&lt;/div&gt;</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>aria-label</code> attribute</li></ul></td>
+    <td class="test-box">
+<div>
   Phone:
   <input type="text"
          aria-label="Phone number">
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: &quot;Phone number&quot;</li>
-              <li>FROM: aria-label</li>
-              <li>ROLE: textbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Phone number</li>
+        <li>FROM: aria-label</li>
+        <li>ROLE: textbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
   Phone:
   &lt;input type=&quot;text&quot;
          aria-label=&quot;Phone number&quot;&gt;
 &lt;/div&gt;
 </pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li><code>placeholder</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>placeholder</code> attribute</li></ul></td>
+    <td class="test-box">
+<div>
   Phone:
   <input type="text"
          placeholder="xxx-xxx-xxxx">
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: &quot;xxx-xxx-xxxx&quot;</li>
-              <li>FROM: placeholder</li>
-              <li>ROLE: textbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: xxx-xxx-xxxx</li>
+        <li>FROM: placeholder</li>
+        <li>ROLE: textbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
   Phone:
   &lt;input type=&quot;text&quot;
          placeholder=&quot;xxx-xxx-xxxx&quot;&gt;
 &lt;/div&gt;
 </pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li><code>label</code> reference and <code>placeholder</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>
-  <label for="t3">Phone:</label>
-  <input type="text" id="t3"
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>label</code> reference and <code>placeholder</code> attribute</li></ul></td>
+    <td class="test-box">
+<div>
+  <label for="c3">Phone:</label>
+  <input type="text" id="c3"
          placeholder="xxx-xxx-xxxx">
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: &quot;Phone:&quot;</li>
-              <li>FROM: label reference</li>
-              <li>ROLE: textbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;
-  &lt;label for=&quot;t3&quot;&gt;Phone:&lt;/label&gt;
-  &lt;input type=&quot;text&quot; id=&quot;t3&quot;
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Phone:</li>
+        <li>FROM: label reference</li>
+        <li>ROLE: textbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c3&quot;&gt;Phone:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;c3&quot;
          placeholder=&quot;xxx-xxx-xxxx&quot;&gt;
 &lt;/div&gt;
 </pre>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <ul>
-              <li><code>title</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            <div>Phone:
+    </td>
+  </tr>
+  <tr>
+    <td><ul><li><code>title</code> attribute</li></ul></td>
+    <td class="test-box">
+<div>Phone:
   <input type="text" title="Phone number">
 </div>
-
-          </td>
-          <td>
-            <ul>
-              <li>ACC NAME: &quot;Phone number&quot;</li>
-              <li>FROM: title</li>
-              <li>ROLE: textbox</li>
-            </ul>
-          </td>
-          <td>
-            <pre class="src">&lt;div&gt;Phone:
+    </td>
+    <td>
+      <ul>
+        <li>ACCNAME: Phone number</li>
+        <li>FROM: title</li>
+        <li>ROLE: textbox</li>
+      </ul>
+    </td>
+    <td>
+      <pre class="src">&lt;div&gt;Phone:
   &lt;input type=&quot;text&quot; title=&quot;Phone number&quot;&gt;
 &lt;/div&gt;
 </pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    </td>
+  </tr>
+</tbody>
+</table>
 </main>
+
 </body>
 </html>
