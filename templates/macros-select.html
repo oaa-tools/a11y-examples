@@ -1,9 +1,9 @@
 {% macro selectAlb(accname, id) -%}
 <div>
-  <span id="{{ id }}">
+  <div id="{{ id }}" class="above">
     {{ accname }}
-  </span>
-  <select aria-labelledby="{{ id }}">
+  </div>
+  <select ar class="above"ia-labelledby="{{ id }}">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
     <option value="opt-3">Rain</option>
@@ -14,7 +14,7 @@
 
 {% macro selectArl(accname, text) -%}
 <div>
-  <span>{{ text }} </span>
+  <div class="above">{{ text }}</div>
   <select aria-label="{{ accname }}">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
@@ -26,7 +26,7 @@
 
 {% macro selectTtl(accname, text) -%}
 <div>
-  <span>{{ text }} </span>
+  <div class="above">{{ text }}</div>
   <select title="{{ accname }}">
     <option value="opt-1">Sunny</option>
     <option value="opt-2">Cloudy</option>
