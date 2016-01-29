@@ -1,8 +1,14 @@
 var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
+var nunjucksConfig = {
+  autoescape: false,
+  lstripBlocks: true,
+  trimBlocks: true,
+  watch: false
+}
 
 gulp.task('default', function () {
-  nunjucksRender.nunjucks.configure(['templates/'], { watch: false, autoescape: false });
+  nunjucksRender.nunjucks.configure(['templates/'], nunjucksConfig);
 
   gulp.src('src/*.html')
     .pipe(nunjucksRender())
