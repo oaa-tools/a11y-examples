@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Examples: Labeling Form Controls Using Native Semantics</title>
+<link href="css/base.css" rel="stylesheet">
+<link href="css/table.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <h1>Examples: Labeling Form Controls Using Native Semantics</h1>
+</header>
+<main>
+    <h2 id="group-1">Group 1: Using the <code>label</code> element</h2>
+    <h3>Form controls: <code>input[type="text|file|password|number|range|checkbox|radio"], textarea, select, meter, output, progress</code></h3>
+
+    <table aria-labelledby="group-1">
+      <thead>
+        <tr>
+          <th style="width: 30%">Element/Test</th>
+          <th style="width: 30%">Expected Results</th>
+          <th style="width: 50em">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="text"]</code>
+            <div>
+  <label for="c1">Phone:</label>
+  <input type="text" id="c1">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Phone:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c1&quot;&gt;Phone:&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;c1&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="text"]</code>
+            <div>
+  <label>Phone:
+    <input type="text">
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Phone:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;Phone:
+    &lt;input type=&quot;text&quot;&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="file"]</code>
+            <div>
+  <label for="c2" class="above">
+    File to upload:
+  </label>
+  <input type="file" id="c2">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;File to upload:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: none</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c2&quot; class=&quot;above&quot;&gt;
+    File to upload:
+  &lt;/label&gt;
+  &lt;input type=&quot;file&quot; id=&quot;c2&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="file"]</code>
+            <div>
+  <label>
+    <div>File to upload:</div>
+    <input type="file">
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;File to upload:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: none</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;File to upload:&lt;/div&gt;
+    &lt;input type=&quot;file&quot;&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="password"]</code>
+            <div>
+  <label for="c3">Password:</label>
+  <input type="password" id="c3">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Password:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c3&quot;&gt;Password:&lt;/label&gt;
+  &lt;input type=&quot;password&quot; id=&quot;c3&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="password"]</code>
+            <div>
+  <label>Password:
+    <input type="password">
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Password:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;Password:
+    &lt;input type=&quot;password&quot;&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="number"]</code>
+            <div>
+  <label for="c4">Commits:</label>
+  <input type="number" id="c4" value="30">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Commits:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: spinbutton</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c4&quot;&gt;Commits:&lt;/label&gt;
+  &lt;input type=&quot;number&quot; id=&quot;c4&quot; value=&quot;30&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="number"]</code>
+            <div>
+  <label>Commits:
+    <input type="number" value="30">
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Commits:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: spinbutton</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;Commits:
+    &lt;input type=&quot;number&quot; value=&quot;30&quot;&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="range"]</code>
+            <div>
+  <label for="c5" class="above">
+    Saturation:
+  </label>
+  <input type="range" id="c5">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Saturation:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: slider</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c5&quot; class=&quot;above&quot;&gt;
+    Saturation:
+  &lt;/label&gt;
+  &lt;input type=&quot;range&quot; id=&quot;c5&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="range"]</code>
+            <div>
+  <label>
+    <div>Saturation:</div>
+    <input type="range">
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Saturation:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: slider</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;Saturation:&lt;/div&gt;
+    &lt;input type=&quot;range&quot;&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="checkbox"]</code>
+            <div>
+  <input type="checkbox" id="c6">
+  <label for="c6">
+    Include library
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Include library&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: checkbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;c6&quot;&gt;
+  &lt;label for=&quot;c6&quot;&gt;
+    Include library
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="checkbox"]</code>
+            <div>
+  <label>
+    <input type="checkbox">
+    Include library
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Include library&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: checkbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;
+    &lt;input type=&quot;checkbox&quot;&gt;
+    Include library
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="radio"]</code>
+            <div>
+  <input type="radio" id="c7">
+  <label for="c7">
+    Four-wheel drive
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Four-wheel drive&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: radio</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;input type=&quot;radio&quot; id=&quot;c7&quot;&gt;
+  &lt;label for=&quot;c7&quot;&gt;
+    Four-wheel drive
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="radio"]</code>
+            <div>
+  <label>
+    <input type="radio">
+    Four-wheel drive
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Four-wheel drive&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: radio</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;
+    &lt;input type=&quot;radio&quot;&gt;
+    Four-wheel drive
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">textarea</code>
+            <div>
+  <label for="c8" class="above">
+    Comment:
+  </label>
+  <textarea id="c8"></textarea>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Comment:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c8&quot; class=&quot;above&quot;&gt;
+    Comment:
+  &lt;/label&gt;
+  &lt;textarea id=&quot;c8&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">textarea</code>
+            <div>
+  <label>
+    <div>Comment:</div>
+    <textarea></textarea>
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Comment:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: textbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;Comment:&lt;/div&gt;
+    &lt;textarea&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">select</code>
+            <div>
+  <label for="c9" class="above">
+    Weather condition:
+  </label>
+  <select id="c9">
+    <option value="opt-1">Sunny</option>
+    <option value="opt-2">Cloudy</option>
+    <option value="opt-3">Rain</option>
+    <option value="opt-4">Snow</option>
+  </select>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Weather condition:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: listbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c9&quot; class=&quot;above&quot;&gt;
+    Weather condition:
+  &lt;/label&gt;
+  &lt;select id=&quot;c9&quot;&gt;
+    &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
+    &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
+    &lt;option value=&quot;opt-3&quot;&gt;Rain&lt;/option&gt;
+    &lt;option value=&quot;opt-4&quot;&gt;Snow&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">select</code>
+            <div>
+  <label>
+    <div>Weather condition:</div>
+    <select>
+      <option value="opt-1">Sunny</option>
+      <option value="opt-2">Cloudy</option>
+      <option value="opt-3">Rain</option>
+      <option value="opt-4">Snow</option>
+    </select>
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Weather condition:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: listbox</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;Weather condition:&lt;/div&gt;
+    &lt;select&gt;
+      &lt;option value=&quot;opt-1&quot;&gt;Sunny&lt;/option&gt;
+      &lt;option value=&quot;opt-2&quot;&gt;Cloudy&lt;/option&gt;
+      &lt;option value=&quot;opt-3&quot;&gt;Rain&lt;/option&gt;
+      &lt;option value=&quot;opt-4&quot;&gt;Snow&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">meter</code>
+            <div>
+  <label for="c10" class="above">
+    Level:
+  </label>
+  <meter id="c10" min="1"
+      max="5" value="3"></meter>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Level:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: progressbar</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c10&quot; class=&quot;above&quot;&gt;
+    Level:
+  &lt;/label&gt;
+  &lt;meter id=&quot;c10&quot; min=&quot;1&quot;
+      max=&quot;5&quot; value=&quot;3&quot;&gt;&lt;/meter&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">meter</code>
+            <div>
+  <label>
+    <div>Level:</div>
+    <meter min="1" max="5"
+        value="3"></meter>
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Level:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: progressbar</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;Level:&lt;/div&gt;
+    &lt;meter min=&quot;1&quot; max=&quot;5&quot;
+        value=&quot;3&quot;&gt;&lt;/meter&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">output</code>
+            <form oninput="output1.value=range1.value">
+  <label>
+    <div>Select percentage:</div>
+    <input type="range" name="range1">
+  </label>
+  <div class="below">
+    <label for="c11">
+      Result:
+    </label>
+    <output id="c11" name="output1">50</output>
+  </div>
+</form>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Result:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: status</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;form oninput=&quot;output1.value=range1.value&quot;&gt;
+  &lt;label&gt;
+    &lt;div&gt;Select percentage:&lt;/div&gt;
+    &lt;input type=&quot;range&quot; name=&quot;range1&quot;&gt;
+  &lt;/label&gt;
+  &lt;div class=&quot;below&quot;&gt;
+    &lt;label for=&quot;c11&quot;&gt;
+      Result:
+    &lt;/label&gt;
+    &lt;output id=&quot;c11&quot; name=&quot;output1&quot;&gt;50&lt;/output&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">output</code>
+            <form oninput="output2.value=range2.value">
+  <label>
+    <div>Select percentage:</div>
+    <input type="range" name="range2">
+  </label>
+  <label class="below">
+    Result:
+    <output name="output2">50</output>
+  </label>
+</form>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Result:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: status</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;form oninput=&quot;output2.value=range2.value&quot;&gt;
+  &lt;label&gt;
+    &lt;div&gt;Select percentage:&lt;/div&gt;
+    &lt;input type=&quot;range&quot; name=&quot;range2&quot;&gt;
+  &lt;/label&gt;
+  &lt;label class=&quot;below&quot;&gt;
+    Result:
+    &lt;output name=&quot;output2&quot;&gt;50&lt;/output&gt;
+  &lt;/label&gt;
+&lt;/form&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">progress</code>
+            <div>
+  <label for="c12" class="above">
+    Percent complete:
+  </label>
+  <progress id="c12" max="100"
+      value="70">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Percent complete:&quot;</li>
+              <li>FROM: label reference</li>
+              <li>ROLE: progressbar</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label for=&quot;c12&quot; class=&quot;above&quot;&gt;
+    Percent complete:
+  &lt;/label&gt;
+  &lt;progress id=&quot;c12&quot; max=&quot;100&quot;
+      value=&quot;70&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">progress</code>
+            <div>
+  <label>
+    <div>Percent complete:</div>
+    <progress max="100" value="70">
+  </label>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Percent complete:&quot;</li>
+              <li>FROM: label encapsulation</li>
+              <li>ROLE: progressbar</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;label&gt;
+    &lt;div&gt;Percent complete:&lt;/div&gt;
+    &lt;progress max=&quot;100&quot; value=&quot;70&quot;&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <h2 id="group-2">Group 2: Using the <code>value</code> attribute</h2>
+    <h3>Form controls: <code>input[type="button|submit|reset"]</code></h3>
+
+    <table aria-labelledby="group-2">
+      <thead>
+        <tr>
+          <th style="width: 30%">Element/Test</th>
+          <th style="width: 30%">Expected Results</th>
+          <th style="width: 50em">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="button"]</code>
+            <div>
+  <input type="button"
+      value="Launch balloons">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Launch balloons&quot;</li>
+              <li>FROM: value</li>
+              <li>ROLE: button</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;input type=&quot;button&quot;
+      value=&quot;Launch balloons&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="submit"]</code>
+            <div>
+  <input type="submit"
+      value="Create account">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Create account&quot;</li>
+              <li>FROM: value</li>
+              <li>ROLE: button</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;input type=&quot;submit&quot;
+      value=&quot;Create account&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="reset"]</code>
+            <div>
+  <input type="reset"
+      value="Reset all fields">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Reset all fields&quot;</li>
+              <li>FROM: value</li>
+              <li>ROLE: button</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;input type=&quot;reset&quot;
+      value=&quot;Reset all fields&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <h2 id="group-3">Group 3: Using the <code>alt</code> attribute</h2>
+    <h3>Form controls: <code>input[type="image"]</code></h3>
+
+    <table aria-labelledby="group-3">
+      <thead>
+        <tr>
+          <th style="width: 30%">Element/Test</th>
+          <th style="width: 30%">Expected Results</th>
+          <th style="width: 50em">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">input[type="image"]</code>
+            <div>
+  <input type="image"
+      alt="Launch balloons">
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Launch balloons&quot;</li>
+              <li>FROM: alt</li>
+              <li>ROLE: button</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;input type=&quot;image&quot;
+      alt=&quot;Launch balloons&quot;&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <h2 id="group-4">Group 4: Using element content</h2>
+    <h3>Form controls: <code>button</code> element</h3>
+
+    <table aria-labelledby="group-4">
+      <thead>
+        <tr>
+          <th style="width: 30%">Element/Test</th>
+          <th style="width: 30%">Expected Results</th>
+          <th style="width: 50em">Test Source Code</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td class="test-box">
+            <code class="element">button</code>
+            <div>
+  <button>Launch balloons</button>
+</div>
+          </td>
+          <td>
+            <ul>
+              <li>ACC NAME: &quot;Launch balloons&quot;</li>
+              <li>FROM: contents</li>
+              <li>ROLE: button</li>
+            </ul>
+          </td>
+          <td>
+            <pre class="src">&lt;div&gt;
+  &lt;button&gt;Launch balloons&lt;/button&gt;
+&lt;/div&gt;</pre>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+</main>
+</body>
+</html>
