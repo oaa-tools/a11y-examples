@@ -80,7 +80,7 @@ code.element {
 pre.src {
   font-family: Courier, monospace;
   font-size: 95%;
-  margin-top: 0.25em;
+  margin: 0.25em 0;
   padding: 0;
 }
 
