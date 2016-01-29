@@ -1,52 +1,37 @@
-{% macro inputTextRef(id, accname) %}
-<div>
-  <label for="{{ id }}">{{ accname }}</label>
-  <input type="text" id="{{ id }}">
-</div>
-{% endmacro %}
-
-{% macro inputTextEnc(accname) %}
-<div>
-  <label>{{ accname }}
-    <input type="text">
-  </label>
-</div>
-{% endmacro %}
-
-{% macro inputTextAlb(id, accname) %}
+{% macro inputTextAlb(accname, id) -%}
 <div>
   <span id="{{ id }}">{{ accname }}</span>
   <input type="text"
          aria-labelledby="{{ id }}">
 </div>
-{% endmacro %}
+{%- endmacro %}
 
-{% macro inputTextArl(text, accname) %}
+{% macro inputTextArl(accname, text) -%}
 <div>
   {{ text }}
   <input type="text"
          aria-label="{{ accname }}">
 </div>
-{% endmacro %}
+{%- endmacro %}
 
-{% macro inputTextPlh(text, accname) %}
+{% macro inputTextPlh(accname, text) -%}
 <div>
   {{ text }}
   <input type="text"
          placeholder="{{ accname }}">
 </div>
-{% endmacro %}
+{%- endmacro %}
 
-{% macro inputTextRpl(id, accname, plh) %}
+{% macro inputTextRpl(accname, plh, id) -%}
 <div>
   <label for="{{ id }}">{{ accname }}</label>
   <input type="text" id="{{ id }}"
          placeholder="{{ plh }}">
 </div>
-{% endmacro %}
+{%- endmacro %}
 
-{% macro inputTextTtl(text, accname) %}
+{% macro inputTextTtl(accname, text) -%}
 <div>{{ text }}
   <input type="text" title="{{ accname }}">
 </div>
-{% endmacro %}
+{%- endmacro %}

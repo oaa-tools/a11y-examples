@@ -1,32 +1,4 @@
-{% macro selectRef(id, accname) %}
-<div>
-  <label for="{{ id }}">
-    {{ accname }}
-  </label>
-  <select id="{{ id }}">
-    <option value="opt-1">Sunny</option>
-    <option value="opt-2">Cloudy</option>
-    <option value="opt-3">Rain</option>
-    <option value="opt-4">Snow</option>
-  </select>
-</div>
-{% endmacro %}
-
-{% macro selectEnc(accname) %}
-<div>
-  <label>
-    {{ accname }}
-    <select>
-      <option value="opt-1">Sunny</option>
-      <option value="opt-2">Cloudy</option>
-      <option value="opt-3">Rain</option>
-      <option value="opt-4">Snow</option>
-    </select>
-  </label>
-</div>
-{% endmacro %}
-
-{% macro selectAlb(id, accname) %}
+{% macro selectAlb(accname, id) -%}
 <div>
   <span id="{{ id }}">
     {{ accname }}
@@ -38,9 +10,9 @@
     <option value="opt-4">Snow</option>
   </select>
 </div>
-{% endmacro %}
+{%- endmacro %}
 
-{% macro selectArl(text, accname) %}
+{% macro selectArl(accname, text) -%}
 <div>
   <span>{{ text }} </span>
   <select aria-label="{{ accname }}">
@@ -50,9 +22,9 @@
     <option value="opt-4">Snow</option>
   </select>
 </div>
-{% endmacro %}
+{%- endmacro %}
 
-{% macro selectTtl(text, accname) %}
+{% macro selectTtl(accname, text) -%}
 <div>
   <span>{{ text }} </span>
   <select title="{{ accname }}">
@@ -62,4 +34,4 @@
     <option value="opt-4">Snow</option>
   </select>
 </div>
-{% endmacro %}
+{%- endmacro %}
