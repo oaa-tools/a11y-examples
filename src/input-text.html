@@ -1,139 +1,46 @@
 {% extends "base.html" %}
 {% import "macros-common.html" as common %}
+{% import "macros-form-labels.html" as labels %}
 {% import "macros-input-text.html" as macros %}
 {% set title = "Examples: Accessible Name for <code>input[type=text]</code> element" %}
 
 {% block content %}
-    <h2>The various techniques for associating an accessible name with <code>input[type=text]</code></h2>
+<h2 id="tbltitle">The various techniques for associating an accessible name with <code>input[type=text]</code></h2>
 
-    <table aria-labelledby="test1">
-      <thead>
-        <tr>
-          <th style="width: 25%">Labeling Technique</th>
-          <th style="width: 25%">Test</th>
-          <th style="width: 25%">Expected Results</th>
-          <th style="width: 40em">Test Source Code</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <ul>
-              <li><code>label</code> reference</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            {{ macros.inputTextRef("t1", "Phone:") }}
-          </td>
-          <td>
-            {{ common.infoList("Phone:", "label reference", "textbox") }}
-          </td>
-          <td>
-            <pre class="src">{{ macros.inputTextRef("t1", "Phone:") | escape }}</pre>
-          </td>
-        </tr>
+<table aria-labelledby="tbltitle">
+<thead>
+  {{ common.theadRow() }}
+</thead>
+<tbody>
+  {% call(a, b) common.row('<code>label</code> reference', "Phone:", "label reference", "textbox", id="c1") -%}
+    {{ labels.inputTextRef(a, b) }}
+  {%- endcall %}
 
-        <tr>
-          <td>
-            <ul>
-              <li><code>label</code> encapsulation</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            {{ macros.inputTextEnc("Phone:") }}
-          </td>
-          <td>
-            {{ common.infoList("Phone:", "label encapsulation", "textbox") }}
-          </td>
-          <td>
-            <pre class="src">{{ macros.inputTextEnc("Phone:") | escape }}</pre>
-          </td>
-        </tr>
+  {% call(a) common.row('<code>label</code> encapsulation', "Phone:", "label encapsulation", "textbox") -%}
+    {{ labels.inputTextEnc(a) }}
+  {%- endcall %}
 
-        <tr>
-          <td>
-            <ul>
-              <li><code>aria-labelledby</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            {{ macros.inputTextAlb("t2", "Phone:") }}
-          </td>
-          <td>
-            {{ common.infoList("Phone:", "aria-labelledby", "textbox") }}
-          </td>
-          <td>
-            <pre class="src">{{ macros.inputTextAlb("t2", "Phone:") | escape }}</pre>
-          </td>
-        </tr>
+  {% call(a, b) common.row('<code>aria-labelledby</code> attribute', "Phone:", "aria-labelledby", "textbox", id="c2") -%}
+    {{ macros.inputTextAlb(a, b) }}
+  {%- endcall %}
 
-        <tr>
-          <td>
-            <ul>
-              <li><code>aria-label</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            {{ macros.inputTextArl("Phone:", "Phone number") }}
-          </td>
-          <td>
-            {{ common.infoList("Phone number", "aria-label", "textbox") }}
-          </td>
-          <td>
-            <pre class="src">{{ macros.inputTextArl("Phone:", "Phone number") | escape }}</pre>
-          </td>
-        </tr>
+  {% call(a, b) common.row('<code>aria-label</code> attribute', "Phone number", "aria-label", "textbox", "Phone:") -%}
+    {{ macros.inputTextArl(a, b) }}
+  {%- endcall %}
 
-        <tr>
-          <td>
-            <ul>
-              <li><code>placeholder</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            {{ macros.inputTextPlh("Phone:", "xxx-xxx-xxxx") }}
-          </td>
-          <td>
-            {{ common.infoList("xxx-xxx-xxxx", "placeholder", "textbox") }}
-          </td>
-          <td>
-            <pre class="src">{{ macros.inputTextPlh("Phone:", "xxx-xxx-xxxx") | escape }}</pre>
-          </td>
-        </tr>
+  {% call(a, b) common.row('<code>placeholder</code> attribute', "xxx-xxx-xxxx", "placeholder", "textbox", "Phone:") -%}
+    {{ macros.inputTextPlh(a, b) }}
+  {%- endcall %}
 
-        <tr>
-          <td>
-            <ul>
-              <li><code>label</code> reference and <code>placeholder</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            {{ macros.inputTextRpl("t3", "Phone:", "xxx-xxx-xxxx") }}
-          </td>
-          <td>
-            {{ common.infoList("Phone:", "label reference", "textbox") }}
-          </td>
-          <td>
-            <pre class="src">{{ macros.inputTextRpl("t3", "Phone:", "xxx-xxx-xxxx") | escape }}</pre>
-          </td>
-        </tr>
+  {% call(a, b, c) common.row('<code>label</code> reference and <code>placeholder</code> attribute',
+                       "Phone:", "label reference", "textbox", "xxx-xxx-xxxx", "c3") -%}
+    {{ macros.inputTextRpl(a, b, c) }}
+  {%- endcall %}
 
-        <tr>
-          <td>
-            <ul>
-              <li><code>title</code> attribute</li>
-            </ul>
-          </td>
-          <td class="test-box">
-            {{ macros.inputTextTtl("Phone:", "Phone number") }}
-          </td>
-          <td>
-            {{ common.infoList("Phone number", "title", "textbox") }}
-          </td>
-          <td>
-            <pre class="src">{{ macros.inputTextTtl("Phone:", "Phone number") | escape }}</pre>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  {% call(a, b) common.row('<code>title</code> attribute', "Phone number", "title", "textbox", "Phone:") -%}
+    {{ macros.inputTextTtl(a, b) }}
+  {%- endcall %}
+
+</tbody>
+</table>
 {% endblock %}
