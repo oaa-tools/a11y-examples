@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% import "macros-form-labels.html" as macros %}
 {% set title = "Examples: Labeling Form Controls Using Native Semantics" %}
+{% set label = {
+    ref: '<code>label</code> reference',
+    enc: '<code>label</code> encapsulation'
+  }
+%}
 
 {% macro theadRow() -%}
   <tr>
@@ -39,99 +44,99 @@ textarea, select, meter, output, progress</code></h3>
   {{ theadRow() }}
 </thead>
 <tbody>
-  {% call(a, b) row('input[type="text"]', "Phone:", "label reference", "textbox", "c1") -%}
+  {% call(a, b) row('input[type="text"]', "Phone:", label.ref, "textbox", "c1") -%}
     {{ macros.inputTextRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="text"]', "Phone:", "label encapsulation", "textbox") -%}
+  {% call(a) row('input[type="text"]', "Phone:", label.enc, "textbox") -%}
     {{ macros.inputTextEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('input[type="file"]', "File to upload:", "label reference", "none", "c2") -%}
+  {% call(a, b) row('input[type="file"]', "File to upload:", label.ref, "none", "c2") -%}
     {{ macros.inputFileRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="file"]', "File to upload:", "label encapsulation", "none") -%}
+  {% call(a) row('input[type="file"]', "File to upload:", label.enc, "none") -%}
     {{ macros.inputFileEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('input[type="password"]', "Password:", "label reference", "textbox", "c3") -%}
+  {% call(a, b) row('input[type="password"]', "Password:", label.ref, "textbox", "c3") -%}
     {{ macros.inputPasswordRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="password"]', "Password:", "label encapsulation", "textbox") -%}
+  {% call(a) row('input[type="password"]', "Password:", label.enc, "textbox") -%}
     {{ macros.inputPasswordEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('input[type="number"]', "Commits:", "label reference", "spinbutton", "c4") -%}
+  {% call(a, b) row('input[type="number"]', "Commits:", label.ref, "spinbutton", "c4") -%}
     {{ macros.inputNumberRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="number"]', "Commits:", "label encapsulation", "spinbutton") -%}
+  {% call(a) row('input[type="number"]', "Commits:", label.enc, "spinbutton") -%}
     {{ macros.inputNumberEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('input[type="range"]', "Saturation:", "label reference", "slider", "c5") -%}
+  {% call(a, b) row('input[type="range"]', "Saturation:", label.ref, "slider", "c5") -%}
     {{ macros.inputRangeRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="range"]', "Saturation:", "label encapsulation", "slider") -%}
+  {% call(a) row('input[type="range"]', "Saturation:", label.enc, "slider") -%}
     {{ macros.inputRangeEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('input[type="checkbox"]', "Include library", "label reference", "checkbox", "c6") -%}
+  {% call(a, b) row('input[type="checkbox"]', "Include library", label.ref, "checkbox", "c6") -%}
     {{ macros.inputCheckboxRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="checkbox"]', "Include library", "label encapsulation", "checkbox") -%}
+  {% call(a) row('input[type="checkbox"]', "Include library", label.enc, "checkbox") -%}
     {{ macros.inputCheckboxEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('input[type="radio"]', "Four-wheel drive", "label reference", "radio", "c7") -%}
+  {% call(a, b) row('input[type="radio"]', "Four-wheel drive", label.ref, "radio", "c7") -%}
     {{ macros.inputRadioRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="radio"]', "Four-wheel drive", "label encapsulation", "radio") -%}
+  {% call(a) row('input[type="radio"]', "Four-wheel drive", label.enc, "radio") -%}
     {{ macros.inputRadioEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('textarea', "Comment:", "label reference", "textbox", "c8") -%}
+  {% call(a, b) row('textarea', "Comment:", label.ref, "textbox", "c8") -%}
     {{ macros.textareaRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('textarea', "Comment:", "label encapsulation", "textbox") -%}
+  {% call(a) row('textarea', "Comment:", label.enc, "textbox") -%}
     {{ macros.textareaEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('select', "Weather condition:", "label reference", "listbox", "c9") -%}
+  {% call(a, b) row('select', "Weather condition:", label.ref, "listbox", "c9") -%}
     {{ macros.selectRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('select', "Weather condition:", "label encapsulation", "listbox") -%}
+  {% call(a) row('select', "Weather condition:", label.enc, "listbox") -%}
     {{ macros.selectEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('meter', "Level:", "label reference", "progressbar", "c10") -%}
+  {% call(a, b) row('meter', "Level:", label.ref, "progressbar", "c10") -%}
     {{ macros.meterRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('meter', "Level:", "label encapsulation", "progressbar") -%}
+  {% call(a) row('meter', "Level:", label.enc, "progressbar") -%}
     {{ macros.meterEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('output', "Result:", "label reference", "status", "c11") -%}
+  {% call(a, b) row('output', "Result:", label.ref, "status", "c11") -%}
     {{ macros.outputRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('output', "Result:", "label encapsulation", "status") -%}
+  {% call(a) row('output', "Result:", label.enc, "status") -%}
     {{ macros.outputEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) row('progress', "Percent complete:", "label reference", "progressbar", "c12") -%}
+  {% call(a, b) row('progress', "Percent complete:", label.ref, "progressbar", "c12") -%}
     {{ macros.progressRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) row('progress', "Percent complete:", "label encapsulation", "progressbar") -%}
+  {% call(a) row('progress', "Percent complete:", label.enc, "progressbar") -%}
     {{ macros.progressEnc(a) }}
   {%- endcall %}
 
@@ -146,15 +151,15 @@ textarea, select, meter, output, progress</code></h3>
   {{ theadRow() }}
 </thead>
 <tbody>
-  {% call(a) row('input[type="button"]', "Launch balloons", "value", "button") -%}
+  {% call(a) row('input[type="button"]', "Launch balloons", "<code>value</code>", "button") -%}
     {{ macros.inputButtonVal(a) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="submit"]', "Create account", "value", "button") -%}
+  {% call(a) row('input[type="submit"]', "Create account", "<code>value</code>", "button") -%}
     {{ macros.inputSubmitVal(a) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="reset"]', "Reset all fields", "value", "button") -%}
+  {% call(a) row('input[type="reset"]', "Reset all fields", "<code>value</code>", "button") -%}
     {{ macros.inputResetVal(a) }}
   {%- endcall %}
 
@@ -169,7 +174,7 @@ textarea, select, meter, output, progress</code></h3>
   {{ theadRow() }}
 </thead>
 <tbody>
-  {% call(a) row('input[type="image"]', "Launch balloons", "alt", "button") -%}
+  {% call(a) row('input[type="image"]', "Launch balloons", "<code>alt</code>", "button") -%}
     {{ macros.inputImageAlt(a) }}
   {%- endcall %}
 
