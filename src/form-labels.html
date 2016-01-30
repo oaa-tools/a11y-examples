@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 {% import "macros-form-labels.html" as macros %}
 {% set title = "Examples: Labeling Form Controls Using Native Semantics" %}
-{% set label = {
-    ref: '<code>label</code> reference',
-    enc: '<code>label</code> encapsulation'
-  }
-%}
+{% set label = { ref: 'label reference', enc: 'label encapsulation' } %}
 
 {% macro theadRow() -%}
   <tr>
@@ -151,15 +147,15 @@ textarea, select, meter, output, progress</code></h3>
   {{ theadRow() }}
 </thead>
 <tbody>
-  {% call(a) row('input[type="button"]', "Launch balloons", "<code>value</code>", "button") -%}
+  {% call(a) row('input[type="button"]', "Launch balloons", "value", "button") -%}
     {{ macros.inputButtonVal(a) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="submit"]', "Create account", "<code>value</code>", "button") -%}
+  {% call(a) row('input[type="submit"]', "Create account", "value", "button") -%}
     {{ macros.inputSubmitVal(a) }}
   {%- endcall %}
 
-  {% call(a) row('input[type="reset"]', "Reset all fields", "<code>value</code>", "button") -%}
+  {% call(a) row('input[type="reset"]', "Reset all fields", "value", "button") -%}
     {{ macros.inputResetVal(a) }}
   {%- endcall %}
 
@@ -174,7 +170,7 @@ textarea, select, meter, output, progress</code></h3>
   {{ theadRow() }}
 </thead>
 <tbody>
-  {% call(a) row('input[type="image"]', "Launch balloons", "<code>alt</code>", "button") -%}
+  {% call(a) row('input[type="image"]', "Launch balloons", "alt", "button") -%}
     {{ macros.inputImageAlt(a) }}
   {%- endcall %}
 
