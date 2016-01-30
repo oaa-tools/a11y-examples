@@ -3,14 +3,6 @@
 {% import "macros-form-labels.html" as labels %}
 {% import "macros-select.html" as macros %}
 {% set title = "Examples: Accessible Name for <code>select</code> element" %}
-{% set technique = {
-    ref: '<code>label</code> reference',
-    enc: '<code>label</code> encapsulation',
-    alb: '<code>aria-labelledby</code> attribute',
-    arl: '<code>aria-label</code> attribute',
-    ttl: '<code>title</code> attribute'
-  }
-%}
 
 {% block content %}
 <h2 id="tbltitle">The various techniques for associating an accessible name with <code>select</code></h2>
@@ -20,23 +12,23 @@
   {{ common.theadRow() }}
 </thead>
 <tbody>
-  {% call(a, b) common.row(technique.ref, "Weather condition:", "label reference", "listbox", id="c1") -%}
+  {% call(a, b) common.row(common.tech.ref, "Weather condition:", "label reference", "listbox", id="c1") -%}
     {{ labels.selectRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) common.row(technique.enc, "Weather condition:", "label encapsulation", "listbox") -%}
+  {% call(a) common.row(common.tech.enc, "Weather condition:", "label encapsulation", "listbox") -%}
     {{ labels.selectEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) common.row(technique.alb, "Weather condition:", "aria-labelledby", "listbox", id="c2") -%}
+  {% call(a, b) common.row(common.tech.alb, "Weather condition:", "aria-labelledby", "listbox", id="c2") -%}
     {{ macros.selectAlb(a, b) }}
   {%- endcall %}
 
-  {% call(a, b) common.row(technique.arl, "Current weather condition", "aria-label", "listbox", "Weather condition:") -%}
+  {% call(a, b) common.row(common.tech.arl, "Current weather condition", "aria-label", "listbox", "Weather condition:") -%}
     {{ macros.selectArl(a, b) }}
   {%- endcall %}
 
-  {% call(a, b) common.row(technique.ttl, "Current weather condition", "title", "listbox", "Weather condition:") -%}
+  {% call(a, b) common.row(common.tech.ttl, "Current weather condition", "title", "listbox", "Weather condition:") -%}
     {{ macros.selectTtl(a, b) }}
   {%- endcall %}
 

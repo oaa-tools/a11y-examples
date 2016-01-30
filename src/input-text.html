@@ -3,16 +3,6 @@
 {% import "macros-form-labels.html" as labels %}
 {% import "macros-input-text.html" as macros %}
 {% set title = "Examples: Accessible Name for <code>input[type=text]</code> element" %}
-{% set tech = {
-    ref: '<code>label</code> reference',
-    enc: '<code>label</code> encapsulation',
-    alb: '<code>aria-labelledby</code> attribute',
-    arl: '<code>aria-label</code> attribute',
-    plh: '<code>placeholder</code> attribute',
-    rpl: '<code>label</code> reference and <code>placeholder</code> attribute',
-    ttl: '<code>title</code> attribute'
-  }
-%}
 
 {% block content %}
 <h2 id="tbltitle">The various techniques for associating an accessible name with <code>input[type=text]</code></h2>
@@ -22,31 +12,31 @@
   {{ common.theadRow() }}
 </thead>
 <tbody>
-  {% call(a, b) common.row(tech.ref, "Phone:", "label reference", "textbox", id="c1") -%}
+  {% call(a, b) common.row(common.tech.ref, "Phone:", "label reference", "textbox", id="c1") -%}
     {{ labels.inputTextRef(a, b) }}
   {%- endcall %}
 
-  {% call(a) common.row(tech.enc, "Phone:", "label encapsulation", "textbox") -%}
+  {% call(a) common.row(common.tech.enc, "Phone:", "label encapsulation", "textbox") -%}
     {{ labels.inputTextEnc(a) }}
   {%- endcall %}
 
-  {% call(a, b) common.row(tech.alb, "Phone:", "aria-labelledby", "textbox", id="c2") -%}
+  {% call(a, b) common.row(common.tech.alb, "Phone:", "aria-labelledby", "textbox", id="c2") -%}
     {{ macros.inputTextAlb(a, b) }}
   {%- endcall %}
 
-  {% call(a, b) common.row(tech.arl, "Phone number", "aria-label", "textbox", "Phone:") -%}
+  {% call(a, b) common.row(common.tech.arl, "Phone number", "aria-label", "textbox", "Phone:") -%}
     {{ macros.inputTextArl(a, b) }}
   {%- endcall %}
 
-  {% call(a, b) common.row(tech.plh, "xxx-xxx-xxxx", "placeholder", "textbox", "Phone:") -%}
+  {% call(a, b) common.row(common.tech.plh, "xxx-xxx-xxxx", "placeholder", "textbox", "Phone:") -%}
     {{ macros.inputTextPlh(a, b) }}
   {%- endcall %}
 
-  {% call(a, b, c) common.row(tech.rpl, "Phone:", "label reference", "textbox", "xxx-xxx-xxxx", "c3") -%}
+  {% call(a, b, c) common.row(common.tech.rpl, "Phone:", "label reference", "textbox", "xxx-xxx-xxxx", "c3") -%}
     {{ macros.inputTextRpl(a, b, c) }}
   {%- endcall %}
 
-  {% call(a, b) common.row(tech.ttl, "Phone number", "title", "textbox", "Phone:") -%}
+  {% call(a, b) common.row(common.tech.ttl, "Phone number", "title", "textbox", "Phone:") -%}
     {{ macros.inputTextTtl(a, b) }}
   {%- endcall %}
 
